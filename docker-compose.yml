@@ -5,7 +5,7 @@ services:
    container_name: admin-vue
    entrypoint: /bin/sh
    ports:
-     - 9053:8000
+     - 9054:8000
    working_dir: /srv/app
    volumes:
      - type: bind
