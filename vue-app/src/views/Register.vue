@@ -15,13 +15,22 @@
                     ></el-input>
                 </el-form-item>
                 <el-form-item label="信箱" prop="email">
-                    <el-input placeholder="請輸入信箱"></el-input>
+                    <el-input
+                        v-model="registerUser.email"
+                        placeholder="請輸入信箱"
+                    ></el-input>
                 </el-form-item>
                 <el-form-item label="密碼" prop="password">
-                    <el-input placeholder="請輸入密碼"></el-input>
+                    <el-input 
+                        v-model="registerUser.password"
+                        placeholder="請輸入密碼"
+                    ></el-input>
                 </el-form-item>
                 <el-form-item label="確認密碼" prop="passwordCheck">
-                    <el-input placeholder="請確認密碼"></el-input>
+                    <el-input
+                        v-model="registerUser.passwordCheck"    
+                        placeholder="請確認密碼"
+                    ></el-input>
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
                     <el-button class="w-full">註冊</el-button>
