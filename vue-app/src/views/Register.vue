@@ -46,7 +46,7 @@ const validatorPassCheck = (value, callback) => {
     }
 }
 
-const rule = reactive({
+const rules = reactive({
     name: [
         { required: true, message: '使用者名稱不可為空', trigger: 'change'},
         { min: 2, max: 12, message: '長度在2到12個字串之間', trigger: 'blur'}
