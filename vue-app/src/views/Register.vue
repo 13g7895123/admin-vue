@@ -24,12 +24,14 @@
                     <el-input 
                         v-model="registerUser.password"
                         placeholder="請輸入密碼"
+                        type="password"
                     ></el-input>
                 </el-form-item>
                 <el-form-item label="確認密碼" prop="passwordCheck">
                     <el-input
                         v-model="registerUser.passwordCheck"    
                         placeholder="請確認密碼"
+                        type="password"
                     ></el-input>
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
