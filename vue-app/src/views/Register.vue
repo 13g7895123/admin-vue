@@ -18,7 +18,7 @@
                 <el-form-item label="確認密碼" prop="passwordCheck">
                     <el-input placeholder="請確認密碼"></el-input>
                 </el-form-item>
-                <el-form-item>
+                <el-form-item class="w-full flex justify-center">
                     <el-button class="w-full">註冊</el-button>
                 </el-form-item>
             </el-form>
