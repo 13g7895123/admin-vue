@@ -47,6 +47,7 @@
 </template>
 <script setup>
 import { ref, reactive } from 'vue'
+import axios from 'axios'
 // import type { FormInstance } from 'element-plus'
 
 const registerUser = ref({
@@ -56,7 +57,7 @@ const registerUser = ref({
     passwordCheck: ''
 })
 
-const validatorPassCheck = (value, callback) => {
+const validatorPassCheck = (rule, value, callback) => {
     if (value !== registerUser.value.password){
         callback(new Error("Two inputs don't match"))
     }
