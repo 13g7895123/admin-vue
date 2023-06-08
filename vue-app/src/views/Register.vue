@@ -5,6 +5,7 @@
             <el-form 
             :rules="rules"
             :model="registerUser"
+            ref="ruleFormRef"
             label-width="100px"
             class="mt-5 bg-white py-5 px-3 rounded-md shadow-md"
             >
@@ -35,7 +36,10 @@
                     ></el-input>
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
-                    <el-button class="w-full">註冊</el-button>
+                    <el-button 
+                        @click="handleSubmit(ruleFormRef)"
+                        class="w-full"
+                    >註冊</el-button>
                 </el-form-item>
             </el-form>
         </section>
@@ -43,6 +47,7 @@
 </template>
 <script setup>
 import { ref, reactive } from 'vue'
+// import type { FormInstance } from 'element-plus'
 
 const registerUser = ref({
     name: '',
@@ -73,4 +78,19 @@ const rules = reactive({
         { validator: validatorPassCheck, trigger: 'blur'}
     ],
 })
+
+const handleSubmit = (formEl) => {
+    if (!formEl) return;
+    formEl.validate(async(valid) => {
+        if (valid){
+            const { data } = await axios.post(
+                '/api/health-insurance/admin-register.php',
+                registerUser.value
+            )
+            console.log(data);
+        }else{
+            return false;
+        }
+    })
+}
 </script>

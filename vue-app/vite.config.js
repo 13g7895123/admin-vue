@@ -17,6 +17,9 @@ export default defineConfig({
   ],
   server: {
     host: true,
-    port: 8000
+    port: 8000,
+    proxy: {
+      '/admin-api': 'http://139.162.15.125:9090'
+    }
   }
 })
