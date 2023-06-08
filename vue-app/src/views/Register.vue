@@ -46,9 +46,9 @@ import { ref, reactive } from 'vue'
 
 const registerUser = ref({
     name: '',
-    email: 'test@gmail.com',
-    password: '123123',
-    passwordCheck: '123123'
+    email: '',
+    password: '',
+    passwordCheck: ''
 })
 
 const validatorPassCheck = (value, callback) => {
