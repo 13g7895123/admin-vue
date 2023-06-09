@@ -93,5 +93,6 @@ const handleSubmit = (formEl) => {
             return false;
         }
     })
+    console.log(formEl);
 }
 </script>
