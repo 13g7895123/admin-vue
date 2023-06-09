@@ -50,6 +50,8 @@ import { ref, reactive } from 'vue'
 import axios from 'axios'
 // import type { FormInstance } from 'element-plus'
 
+const ruleFormRef = ref()
+
 const registerUser = ref({
     name: '',
     email: '',
@@ -81,8 +83,6 @@ const rules = reactive({
 })
 
 const handleSubmit = (formEl) => {
-
-    alert('123')
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
