@@ -81,6 +81,8 @@ const rules = reactive({
 })
 
 const handleSubmit = (formEl) => {
+
+    alert('123')
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
