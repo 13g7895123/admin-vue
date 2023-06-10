@@ -93,7 +93,7 @@ const handleSubmit = (formEl) => {
             const { data } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
-            ).then(() => {
+            ).then((data) => {
                 if (data.success){
                     ElMessage({
                     message: "用户注册成功.",
@@ -101,6 +101,7 @@ const handleSubmit = (formEl) => {
                     })
                     router.push("/")
                 }else{
+                    // console.log(typeof(data));
                     alert(data.msg)  
                 }
             }).catch(() => {
