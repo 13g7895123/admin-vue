@@ -90,7 +90,7 @@ const handleSubmit = (formEl) => {
                 '/api/health-insurance/admin-register.php',
                 registerUser.value
             )
-            console.log(data);
+            // console.log(data);
         }else{
             return false;
         }
