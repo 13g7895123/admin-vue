@@ -94,11 +94,15 @@ const handleSubmit = (formEl) => {
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
             ).then(() => {
-                ElMessage({
+                if (data.success){
+                    ElMessage({
                     message: "用户注册成功.",
                     type: "success",
-                })
-                router.push("/")
+                    })
+                    router.push("/")
+                }else{
+                    alert(data.msg)  
+                }
             }).catch(() => {
                 alert(data.msg)
             })
