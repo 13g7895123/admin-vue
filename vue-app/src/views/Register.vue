@@ -48,9 +48,11 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import axios from 'axios'
+import { useRouter } from "vue-router";
 // import type { FormInstance } from 'element-plus'
 
 const ruleFormRef = ref()
+const router = useRouter();
 
 const registerUser = ref({
     name: '',
@@ -91,19 +93,15 @@ const handleSubmit = (formEl) => {
             const { data } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
-            )
-            // .then(
-            //     console.log(data)
-            // ).catch(
-            //     alert(data.msg)
-            // )
-
-            ElMessage({
-                message: "用户注册成功.",
-                type: "success",
-            });
-            router.push("/");
-            
+            ).then(() => {
+                ElMessage({
+                    message: "用户注册成功.",
+                    type: "success",
+                })
+                router.push("/")
+            }).catch(() => {
+                alert(data.msg)
+            })
         }else{
             return false;
         }
