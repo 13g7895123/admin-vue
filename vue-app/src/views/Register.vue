@@ -62,6 +62,8 @@ const registerUser = ref({
 const validatorPassCheck = (rule, value, callback) => {
     if (value !== registerUser.value.password){
         callback(new Error("Two inputs don't match"))
+    }else{
+        callback()
     }
 }
 
