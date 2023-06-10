@@ -89,7 +89,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const { data } = await axios.post(
-                '/admin-api/api/health-insurance/admin-register.php',
+                'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
             )
             console.log(data);
