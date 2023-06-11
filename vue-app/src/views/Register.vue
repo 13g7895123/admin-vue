@@ -109,11 +109,6 @@ const handleSubmit = (formEl) => {
                     }).then(() => {
                         router.push("/")
                     })
-                    // ElMessage({
-                    // message: "用户注册成功.",
-                    // type: "success",
-                    // })
-                    // router.push("/")
                 }else{
                     Swal.fire({
                         title: '註冊失敗',
