@@ -93,29 +93,19 @@ const handleSubmit = (formEl) => {
             const { data } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
-            ).then((response) => {  // 回傳為object
-                // console.log(typeof(response))
-                console.log(JSON.stringify(response));
-                console.log(typeof(JSON.stringify(response)));  
-                response = JSON.stringify(response) // 轉為json string
-                response = JSON.parse(response) // 轉為json object
+            ).then((response) => {                      // 回傳為object
+                response = JSON.stringify(response)     // 轉為json string
+                response = JSON.parse(response)         // 轉為json object
 
-                console.log(response.data.msg);
-                console.log(typeof(response));
-                // console.log(response['response']);
+                data = response.data
 
-                if (response.success){
+                if (data.success){
                     ElMessage({
                     message: "用户注册成功.",
                     type: "success",
                     })
                     router.push("/")
                 }else{
-                    console.log(typeof(response));
-                    // console.log(typeof(JSON.parse(data)));
-                    // console.log(typeof(JSON.stringify(data)));
-                    // console.log(JSON.parse(data));
-                    // console.log(JSON.stringify(data));
                     alert(data.msg)  
                 }
             }).catch(() => {
