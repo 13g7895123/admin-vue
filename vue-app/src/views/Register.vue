@@ -94,11 +94,13 @@ const handleSubmit = (formEl) => {
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
             ).then((data) => {  // 回傳為object
-                console.log(typeof(data))
+                // console.log(typeof(data))
                 console.log(JSON.stringify(data));
-                console.log(typeof(JSON.stringify(data)));
-                data = JSON.stringify(data)
-                
+                console.log(typeof(JSON.stringify(data)));  
+                data = JSON.stringify(data) // 轉為json string
+
+                console.log(data.data);
+
                 if (data.success){
                     ElMessage({
                     message: "用户注册成功.",
@@ -107,10 +109,10 @@ const handleSubmit = (formEl) => {
                     router.push("/")
                 }else{
                     console.log(typeof(data));
-                    console.log(typeof(JSON.parse(data)));
-                    console.log(typeof(JSON.stringify(data)));
-                    console.log(JSON.parse(data));
-                    console.log(JSON.stringify(data));
+                    // console.log(typeof(JSON.parse(data)));
+                    // console.log(typeof(JSON.stringify(data)));
+                    // console.log(JSON.parse(data));
+                    // console.log(JSON.stringify(data));
                     alert(data.msg)  
                 }
             }).catch(() => {
