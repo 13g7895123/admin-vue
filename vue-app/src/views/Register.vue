@@ -104,7 +104,9 @@ const handleSubmit = (formEl) => {
                 }else{
                     console.log(typeof(data));
                     console.log(typeof(JSON.parse(data)));
+                    console.log(typeof(JSON.stringify(data)));
                     console.log(JSON.parse(data));
+                    console.log(JSON.stringify(data));
                     alert(data.msg)  
                 }
             }).catch(() => {
