@@ -97,7 +97,7 @@ const handleSubmit = (formEl) => {
                 response = JSON.stringify(response)     // 轉為json string
                 response = JSON.parse(response)         // 轉為json object
 
-                data = response.data
+                const data = response.data
 
                 if (data.success){
                     ElMessage({
