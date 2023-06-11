@@ -93,9 +93,10 @@ const handleSubmit = (formEl) => {
             const { data } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
                 registerUser.value
-            ).then((data) => {  // type is object
+            ).then((data) => {  // 回傳為object
                 console.log(typeof(data))
                 console.log(JSON.stringify(data));
+                console.log(typeof(JSON.stringify(data)));
                 // data = JSON.stringify(data)
                 if (data.success){
                     ElMessage({
