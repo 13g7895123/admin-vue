@@ -95,6 +95,7 @@ const handleSubmit = (formEl) => {
                 registerUser.value
             ).then((data) => {
                 console.log(typeof(data))
+                console.log(JSON.parse(data));
                 // data = JSON.stringify(data)
                 if (data.success){
                     ElMessage({
