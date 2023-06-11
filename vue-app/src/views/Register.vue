@@ -103,7 +103,7 @@ const handleSubmit = (formEl) => {
                     router.push("/")
                 }else{
                     console.log(typeof(data));
-                    console.log(data);
+                    console.log(data.data);
                     alert(data.msg)  
                 }
             }).catch(() => {
