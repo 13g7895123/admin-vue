@@ -110,9 +110,10 @@ const handleSubmit = (formEl) => {
                     Swal.fire({
                         title: '註冊失敗',
                         text: data.msg,
+                        type: 'warning',
                         showConfirmButton: false,
                         showCancelButton: false,
-                        timer: 3000,
+                        timer: 2000,
                     }) 
                 }
             }).catch(() => {
