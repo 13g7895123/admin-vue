@@ -106,11 +106,13 @@ const handleSubmit = (formEl) => {
                     })
                     router.push("/")
                 }else{
-                    alert(data.msg) 
+                    // alert(data.msg) 
                     Swal.fire({
                         title: '註冊失敗',
                         text: data.msg,
-                        timer: 1500
+                        showConfirmButton: false,
+                        showCancelButton: false,
+                        timer: 3000,
                     }) 
                 }
             }).catch(() => {
