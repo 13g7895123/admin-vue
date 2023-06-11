@@ -99,7 +99,7 @@ const handleSubmit = (formEl) => {
                 console.log(typeof(JSON.stringify(data)));  
                 data = JSON.stringify(data) // 轉為json string
 
-                console.log(data.data);
+                console.log(data['data']);
 
                 if (data.success){
                     ElMessage({
