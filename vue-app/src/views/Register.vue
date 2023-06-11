@@ -97,7 +97,8 @@ const handleSubmit = (formEl) => {
                 console.log(typeof(data))
                 console.log(JSON.stringify(data));
                 console.log(typeof(JSON.stringify(data)));
-                // data = JSON.stringify(data)
+                data = JSON.stringify(data)
+                
                 if (data.success){
                     ElMessage({
                     message: "用户注册成功.",
