@@ -55,10 +55,10 @@ const ruleFormRef = ref()
 const router = useRouter();
 
 const registerUser = ref({
-    name: '',
-    email: '',
-    password: '',
-    passwordCheck: ''
+    name: '123',
+    email: '123@gmail.com',
+    password: '123123',
+    passwordCheck: '123123'
 })
 
 const validatorPassCheck = (rule, value, callback) => {
