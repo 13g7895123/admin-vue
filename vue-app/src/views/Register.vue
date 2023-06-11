@@ -100,13 +100,21 @@ const handleSubmit = (formEl) => {
                 const data = response.data              // 取出資料
 
                 if (data.success){
-                    ElMessage({
-                    message: "用户注册成功.",
-                    type: "success",
+                    Swal.fire({
+                        title: '註冊成功',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        showCancelButton: false,
+                        timer: 2000,
+                    }).then(() => {
+                        router.push("/")
                     })
-                    router.push("/")
+                    // ElMessage({
+                    // message: "用户注册成功.",
+                    // type: "success",
+                    // })
+                    // router.push("/")
                 }else{
-                    // alert(data.msg) 
                     Swal.fire({
                         title: '註冊失敗',
                         text: data.msg,
