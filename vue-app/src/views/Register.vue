@@ -100,7 +100,7 @@ const handleSubmit = (formEl) => {
                 response = JSON.stringify(response) // 轉為json string
                 response = JSON.parse(response) // 轉為json
 
-                console.log(response);
+                console.log(response.data);
                 console.log(typeof(response));
                 // console.log(response['response']);
 
