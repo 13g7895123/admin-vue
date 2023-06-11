@@ -97,9 +97,12 @@ const handleSubmit = (formEl) => {
                 // console.log(typeof(data))
                 console.log(JSON.stringify(data));
                 console.log(typeof(JSON.stringify(data)));  
-                data = JSON.stringify(data) // 轉為json string
+                // data = JSON.stringify(data) // 轉為json string
+                data = JSON.parse(data) // 轉為json
 
-                console.log(data['data']);
+                console.log(data);
+                console.log(typeof(data));
+                // console.log(data['data']);
 
                 if (data.success){
                     ElMessage({
