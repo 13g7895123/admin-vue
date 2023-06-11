@@ -49,7 +49,7 @@
 import { ref, reactive } from 'vue'
 import axios from 'axios'
 import { useRouter } from "vue-router";
-// import type { FormInstance } from 'element-plus'
+import Swal from 'sweetalert2'
 
 const ruleFormRef = ref()
 const router = useRouter();
@@ -97,7 +97,7 @@ const handleSubmit = (formEl) => {
                 response = JSON.stringify(response)     // 轉為json string
                 response = JSON.parse(response)         // 轉為json object
 
-                const data = response.data
+                const data = response.data              // 取出資料
 
                 if (data.success){
                     ElMessage({
@@ -106,7 +106,12 @@ const handleSubmit = (formEl) => {
                     })
                     router.push("/")
                 }else{
-                    alert(data.msg)  
+                    alert(data.msg) 
+                    Swal.fire({
+                        title: '註冊失敗',
+                        text: data.msg,
+                        timer: 1500
+                    }) 
                 }
             }).catch(() => {
                 alert(data.msg)
@@ -115,6 +120,5 @@ const handleSubmit = (formEl) => {
             return false;
         }
     })
-    // console.log(formEl);
 }
 </script>
