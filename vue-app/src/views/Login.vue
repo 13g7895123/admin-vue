@@ -6,7 +6,7 @@
             :rules="rules"
             :model="registerUser"
             ref="ruleFormRef"
-            label-width="100px"
+            label-width="50px"
             class="mt-5 bg-white py-5 px-3 rounded-md shadow-md"
             >
                 <!-- <el-form-item label="使用者名稱" prop="name">
@@ -134,7 +134,4 @@ const handleSubmit = (formEl) => {
     })
 }
 
-const goToLogin = () => {
-    router.push("/")
-}
 </script>
