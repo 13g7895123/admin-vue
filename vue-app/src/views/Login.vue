@@ -6,7 +6,7 @@
             :rules="rules"
             :model="registerUser"
             ref="ruleFormRef"
-            label-width="50px"
+            label-width="80px"
             class="mt-5 bg-white py-5 px-3 rounded-md shadow-md"
             >
                 <!-- <el-form-item label="使用者名稱" prop="name">
