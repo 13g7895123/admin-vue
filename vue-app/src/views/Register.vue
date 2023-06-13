@@ -38,11 +38,13 @@
                 <el-form-item class="w-full flex justify-center">
                     <el-button 
                         @click="handleSubmit(ruleFormRef)"
+                        class="w-full"
                     >註冊</el-button>
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
                     <el-button 
                         @click="goToLogin"
+                        class="w-full"
                     >返回登入頁</el-button>
                 </el-form-item>
             </el-form>
