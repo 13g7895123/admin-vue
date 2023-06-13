@@ -135,6 +135,6 @@ const handleSubmit = (formEl) => {
 }
 
 const goToLogin = () => {
-    router.push("/")
+    router.push("/login")
 }
 </script>
