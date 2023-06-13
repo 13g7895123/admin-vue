@@ -42,7 +42,7 @@
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
                     <el-button 
-                        @click="$router.push("/")"
+                        @click="goToLogin"
                     >返回登入頁</el-button>
                 </el-form-item>
             </el-form>
@@ -130,5 +130,9 @@ const handleSubmit = (formEl) => {
             return false;
         }
     })
+}
+
+const goToLogin = () => {
+    router.push("/")
 }
 </script>
