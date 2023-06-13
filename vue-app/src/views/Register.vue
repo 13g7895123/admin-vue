@@ -42,7 +42,7 @@
                 </el-form-item>
                 <el-form-item class="w-full flex justify-center">
                     <el-button 
-                        @click="$router.push("/login")"
+                        @click="$router.push("/")"
                     >返回登入頁</el-button>
                 </el-form-item>
             </el-form>
