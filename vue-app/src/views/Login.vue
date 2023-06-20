@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-screen h-screen bg-loginBg bg-cover bg-no-repeat bg-center">
+    <div class="relative w-screen h-screen bg-registerBg bg-cover bg-no-repeat bg-center">
         <section class="w-[370px] h-[210px] absolute top-[10%] left-[34%] text-center">
             <span class="text-[26px]">後臺管理系統</span>
             <el-form 
