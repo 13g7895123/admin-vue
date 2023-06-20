@@ -15,7 +15,7 @@
                         placeholder="請輸入使用者名稱"
                     ></el-input>
                 </el-form-item> -->
-                <el-form-item label="帳號" prop="email">
+                <el-form-item label="帳號" prop="account">
                     <el-input
                         v-model="loginUser.account"
                         placeholder="請輸入帳號"
@@ -77,7 +77,7 @@ const rules = reactive({
     account: [{ required: true, message: '帳號不可為空', trigger: 'blur' }],
     password: [
         { required: true, message: '密碼不可為空', trigger: 'blur'},
-        { min: 4, max: 12, message: '長度在6到12個字串之間', trigger: 'blur'}
+        { min: 4, max: 12, message: '長度在4到12個字串之間', trigger: 'blur'}
     ]
 })
 
