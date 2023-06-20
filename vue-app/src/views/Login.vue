@@ -77,7 +77,7 @@ const rules = reactive({
     account: [{ required: true, message: '帳號不可為空', trigger: 'blur' }],
     password: [
         { required: true, message: '密碼不可為空', trigger: 'blur'},
-        { min: 6, max: 12, message: '長度在6到12個字串之間', trigger: 'blur'}
+        { min: 4, max: 12, message: '長度在6到12個字串之間', trigger: 'blur'}
     ]
 })
 
