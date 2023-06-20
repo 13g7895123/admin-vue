@@ -1,36 +1,36 @@
 <template>
-    <div class="relative w-screen h-screen bg-registerBg bg-cover bg-no-repeat bg-center">
+    <div class="relative w-screen h-screen bg-loginBg bg-cover bg-no-repeat bg-center">
         <section class="w-[370px] h-[210px] absolute top-[10%] left-[34%] text-center">
             <span class="text-[26px]">後臺管理系統</span>
             <el-form 
             :rules="rules"
-            :model="registerUser"
+            :model="loginUser"
             ref="ruleFormRef"
             label-width="80px"
             class="mt-5 bg-white py-5 px-3 rounded-md shadow-md"
             >
                 <!-- <el-form-item label="使用者名稱" prop="name">
                     <el-input
-                        v-model="registerUser.name"
+                        v-model="loginUser.name"
                         placeholder="請輸入使用者名稱"
                     ></el-input>
                 </el-form-item> -->
-                <el-form-item label="信箱" prop="email">
+                <el-form-item label="帳號" prop="email">
                     <el-input
-                        v-model="registerUser.email"
-                        placeholder="請輸入信箱"
+                        v-model="loginUser.account"
+                        placeholder="請輸入帳號"
                     ></el-input>
                 </el-form-item>
                 <el-form-item label="密碼" prop="password">
                     <el-input 
-                        v-model="registerUser.password"
+                        v-model="loginUser.password"
                         placeholder="請輸入密碼"
                         type="password"
                     ></el-input>
                 </el-form-item>
                 <!-- <el-form-item label="確認密碼" prop="passwordCheck">
                     <el-input
-                        v-model="registerUser.passwordCheck"    
+                        v-model="loginUser.passwordCheck"    
                         placeholder="請確認密碼"
                         type="password"
                     ></el-input>
@@ -60,15 +60,13 @@ import Swal from 'sweetalert2'
 const ruleFormRef = ref()
 const router = useRouter();
 
-const registerUser = ref({
-    name: '',
-    email: '',
+const loginUser = ref({
+    account: '',
     password: '',
-    passwordCheck: ''
 })
 
 const validatorPassCheck = (rule, value, callback) => {
-    if (value !== registerUser.value.password){
+    if (value !== loginUser.value.password){
         callback(new Error("Two inputs don't match"))
     }else{
         callback()
@@ -76,20 +74,11 @@ const validatorPassCheck = (rule, value, callback) => {
 }
 
 const rules = reactive({
-    name: [
-        { required: true, message: '使用者名稱不可為空', trigger: 'change'},
-        { min: 2, max: 12, message: '長度在2到12個字串之間', trigger: 'blur'}
-    ],
-    email: [{ type: 'email', required: true, message: '信箱格式不正確', trigger: 'blur' }],
+    account: [{ required: true, message: '帳號不可為空', trigger: 'blur' }],
     password: [
         { required: true, message: '密碼不可為空', trigger: 'blur'},
         { min: 6, max: 12, message: '長度在6到12個字串之間', trigger: 'blur'}
-    ],
-    passwordCheck: [
-        { required: true, message: '密碼不可為空', trigger: 'blur'},
-        { min: 6, max: 12, message: '長度在6到12個字串之間', trigger: 'blur'},
-        { validator: validatorPassCheck, trigger: 'blur'}
-    ],
+    ]
 })
 
 const handleSubmit = (formEl) => {
@@ -98,7 +87,7 @@ const handleSubmit = (formEl) => {
         if (valid){
             const { data } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
-                registerUser.value
+                loginUser.value
             ).then((response) => {                      // 回傳為object
                 response = JSON.stringify(response)     // 轉為json string
                 response = JSON.parse(response)         // 轉為json object
