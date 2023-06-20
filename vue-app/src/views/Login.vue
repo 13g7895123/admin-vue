@@ -97,7 +97,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const { data } = await axios.post(
-                'http://139.162.15.125:9090/api/health-insurance/admin-register.php',
+                'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
                 registerUser.value
             ).then((response) => {                      // 回傳為object
                 response = JSON.stringify(response)     // 轉為json string
@@ -107,7 +107,7 @@ const handleSubmit = (formEl) => {
 
                 if (data.success){
                     Swal.fire({
-                        title: '註冊成功',
+                        title: '登入成功',
                         icon: 'success',
                         showConfirmButton: false,
                         showCancelButton: false,
@@ -117,7 +117,7 @@ const handleSubmit = (formEl) => {
                     })
                 }else{
                     Swal.fire({
-                        title: '註冊失敗',
+                        title: '登入失敗',
                         text: data.msg,
                         icon: 'error',
                         showConfirmButton: false,
