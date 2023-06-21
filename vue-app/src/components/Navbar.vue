@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="w-full min-w-[600px] p-1 bg-[#074c62] text-white border-b-2">
     <el-row>
       <el-col :span="12" class="flex justify-start items-center pl-3">
       <!-- <el-col :span="12" class="logo-container"> -->
