@@ -1,43 +1,44 @@
 <template>
-    <nav class="nav">
-      <el-row>
-        <el-col :span="12" class="logo-container">
-          <img src="../assets/logo.png" class="logo" alt="logo" />
-          <span class="title">后台管理系统</span>
-        </el-col>
-        <el-col :span="12" class="user">
-          <div class="userinfo">
-            <img src="../assets/default.jpeg" class="avatar" alt="" />
-            <div class="welcome-content">
-              <p class="content welcome">欢迎</p>
-              <p class="content username">米斯特吴</p>
-            </div>
-            <span class="dropdown">
-              <el-dropdown>
-              <!-- <el-dropdown @click="handleDropdown"> -->
-                <span class="el-dropdown-link">
-                    <el-icon>   
-                    <!-- <arrow-down /> -->
-                    </el-icon>
-                </span>
-                <template #dropdown>
-                  <el-dropdown-menu>
-                    <el-dropdown-item>个人信息</el-dropdown-item>
-                    <el-dropdown-item>退出</el-dropdown-item>
-                  </el-dropdown-menu>
-                </template>
-              </el-dropdown>
-            </span>
+  <nav class="nav">
+    <el-row>
+      <el-col :span="12" class="flex justify-start">
+      <!-- <el-col :span="12" class="logo-container"> -->
+        <img src="../assets/logo.png" class="logo" alt="logo" />
+        <span class="title">后台管理系统</span>
+      </el-col>
+      <el-col :span="12" class="user">
+        <div class="userinfo">
+          <img src="../assets/default.jpeg" class="avatar" alt="" />
+          <div class="welcome-content">
+            <p class="content welcome">欢迎</p>
+            <p class="content username">米斯特吴</p>
           </div>
-        </el-col>
-      </el-row>
-    </nav>
-  </template>
+          <span class="dropdown">
+            <el-dropdown>
+            <!-- <el-dropdown @click="handleDropdown"> -->
+              <span class="el-dropdown-link">
+                  <el-icon>   
+                  <!-- <arrow-down /> -->
+                  </el-icon>
+              </span>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item>个人信息</el-dropdown-item>
+                  <el-dropdown-item>退出</el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </span>
+        </div>
+      </el-col>
+    </el-row>
+  </nav>
+</template>
   
-  <script  setup lang="ts">
+<script setup>
 //   import { ArrowDown } from "@element-plus/icons-vue";
-  const handleDropdown = () => {};
-  </script>
+const handleDropdown = () => {};
+</script>
   
   <style scoped>
   .nav {
