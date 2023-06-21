@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <el-row>
-      <el-col :span="12" class="flex justify-start">
+      <el-col :span="12" class="flex justify-start items-center pl-3">
       <!-- <el-col :span="12" class="logo-container"> -->
         <img src="../assets/logo.png" class="logo" alt="logo" />
         <span class="title">后台管理系统</span>
