@@ -37,11 +37,11 @@ import { ref, reactive } from 'vue'
 import axios from 'axios'
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
-import { useAuthStore } from '../stores/loginAuth.js';
+// import { useAuthStore } from '../stores/loginAuth.js';
 
 const ruleFormRef = ref()
 const router = useRouter();
-const loginStore = useAuthStore();
+// const loginStore = useAuthStore();
 
 const loginUser = ref({
     account: '',
@@ -74,8 +74,8 @@ const handleSubmit = (formEl) => {
                     console.log(data.user.account);
                     sessionStorage.setItem('account') = data.user.account;
 
-                    loginStore.setAuth(true);
-                    loginStore.setUser = data.user.account;
+                    // loginStore.setAuth(true);
+                    // loginStore.setUser = data.user.account;
 
                     Swal.fire({
                         title: '登入成功',
