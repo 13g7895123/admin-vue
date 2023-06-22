@@ -71,7 +71,7 @@ const handleSubmit = (formEl) => {
 
                 if (data.success){
 
-                    console.log(data)
+                    console.log(data.user.account)
                     // store.setAuth(true);
                     // store.setUser = data;
 
