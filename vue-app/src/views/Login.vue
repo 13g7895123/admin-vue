@@ -41,7 +41,7 @@ import { useAuthStore } from '../stores/loginAuth.js';
 
 const ruleFormRef = ref()
 const router = useRouter();
-const store = useAuthStore();
+const loginStore = useAuthStore();
 
 const loginUser = ref({
     account: '',
@@ -71,9 +71,8 @@ const handleSubmit = (formEl) => {
 
                 if (data.success){
 
-                    console.log(data.user.account)
-                    // store.setAuth(true);
-                    // store.setUser = data;
+                    loginStore.setAuth(true);
+                    loginStore.setUser = data.user.account;
 
                     Swal.fire({
                         title: '登入成功',
@@ -82,7 +81,7 @@ const handleSubmit = (formEl) => {
                         showCancelButton: false,
                         timer: 2000,
                     }).then(() => {
-                        // router.push("/")
+                        router.push("/")
                     })
                 }else{
                     Swal.fire({
