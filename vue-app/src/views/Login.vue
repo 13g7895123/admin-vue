@@ -9,12 +9,6 @@
             label-width="80px"
             class="mt-5 bg-white py-5 px-3 rounded-md shadow-md"
             >
-                <!-- <el-form-item label="使用者名稱" prop="name">
-                    <el-input
-                        v-model="loginUser.name"
-                        placeholder="請輸入使用者名稱"
-                    ></el-input>
-                </el-form-item> -->
                 <el-form-item label="帳號" prop="account">
                     <el-input
                         v-model="loginUser.account"
@@ -28,25 +22,12 @@
                         type="password"
                     ></el-input>
                 </el-form-item>
-                <!-- <el-form-item label="確認密碼" prop="passwordCheck">
-                    <el-input
-                        v-model="loginUser.passwordCheck"    
-                        placeholder="請確認密碼"
-                        type="password"
-                    ></el-input>
-                </el-form-item> -->
                 <el-form-item class="w-full flex justify-center">
                     <el-button 
                         @click="handleSubmit(ruleFormRef)"
                         class="w-full"
                     >登入</el-button>
                 </el-form-item>
-                <!-- <el-form-item class="w-full flex justify-center">
-                    <el-button 
-                        @click="goToLogin"
-                        class="w-full"
-                    >返回登入頁</el-button>
-                </el-form-item> -->
             </el-form>
         </section>
     </div>
@@ -56,22 +37,16 @@ import { ref, reactive } from 'vue'
 import axios from 'axios'
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
+import { useAuthStore } from '../stores/loginAuth.js';
 
 const ruleFormRef = ref()
 const router = useRouter();
+const store = useAuthStore();
 
 const loginUser = ref({
     account: '',
     password: '',
 })
-
-const validatorPassCheck = (rule, value, callback) => {
-    if (value !== loginUser.value.password){
-        callback(new Error("Two inputs don't match"))
-    }else{
-        callback()
-    }
-}
 
 const rules = reactive({
     account: [{ required: true, message: '帳號不可為空', trigger: 'blur' }],
@@ -95,6 +70,11 @@ const handleSubmit = (formEl) => {
                 const data = response.data              // 取出資料
 
                 if (data.success){
+
+                    console.log(data)
+                    // store.setAuth(true);
+                    // store.setUser = data;
+
                     Swal.fire({
                         title: '登入成功',
                         icon: 'success',
@@ -102,7 +82,7 @@ const handleSubmit = (formEl) => {
                         showCancelButton: false,
                         timer: 2000,
                     }).then(() => {
-                        router.push("/")
+                        // router.push("/")
                     })
                 }else{
                     Swal.fire({

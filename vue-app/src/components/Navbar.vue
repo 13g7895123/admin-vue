@@ -4,13 +4,13 @@
       <el-col :span="12" class="flex justify-start items-center pl-3">
       <!-- <el-col :span="12" class="logo-container"> -->
         <img src="../assets/logo.png" class="logo" alt="logo" />
-        <span class="title">后台管理系统</span>
+        <span class="title">後台管理系统</span>
       </el-col>
       <el-col :span="12" class="user">
         <div class="userinfo">
           <img src="../assets/default.jpeg" class="avatar" alt="" />
           <div class="welcome-content">
-            <p class="content welcome">欢迎</p>
+            <p class="content welcome">Welcome</p>
             <p class="content username">米斯特吴</p>
           </div>
           <span class="dropdown">
@@ -41,7 +41,7 @@ const handleDropdown = () => {};
 </script>
   
   <style scoped>
-  .nav {
+  /* .nav {
     width: 100%;
     height: 60px;
     min-width: 600px;
@@ -49,7 +49,7 @@ const handleDropdown = () => {};
     background: #074c62;
     color: #fff;
     border-bottom: 1px solid #1f2d3d;
-  }
+  } */
   
   .logo-container {
     line-height: 60px;
