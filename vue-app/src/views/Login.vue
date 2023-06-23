@@ -72,7 +72,7 @@ const handleSubmit = (formEl) => {
                 if (data.success){
 
                     console.log(data.user.account);
-                    sessionStorage.setItem('account') = data.user.account;
+                    // sessionStorage.setItem('account') = data.user.account;
 
                     // loginStore.setAuth(true);
                     // loginStore.setUser = data.user.account;
