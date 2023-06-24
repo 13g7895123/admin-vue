@@ -40,6 +40,7 @@ import { ArrowDown } from "@element-plus/icons-vue";
 import { useAuthStore } from "../stores/loginAuth";
 import { useRouter } from "vue-router";
 
+const loginAuth = useAuthStore()
 const router = useRouter()
 
 const handleDropdown = (item) => {
@@ -64,7 +65,6 @@ const logout = () => {
   localStorage.removeItem('userAccount')
 
   // 變更 login auth 狀態
-  const loginAuth = useAuthStore()
   loginAuth.setAuth(false)
   loginAuth.setUser('')
 
