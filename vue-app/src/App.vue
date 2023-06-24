@@ -2,7 +2,7 @@
 import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
 
-const loginStore = useAuthStore
+const loginStore = useAuthStore()
 
 watchEffect(() => {
   if(localStorage.user_account){
