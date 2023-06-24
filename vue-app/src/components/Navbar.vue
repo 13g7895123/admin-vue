@@ -11,7 +11,7 @@
           <img src="../assets/default.jpeg" class="avatar" alt="" />
           <div class="welcome-content">
             <p class="content welcome">Welcome</p>
-            <p class="content username">loginStore.user</p>
+            <p class="content username">{{ loginStore.user }}</p>
           </div>
           <span class="dropdown">
             <!-- <el-dropdown> -->
