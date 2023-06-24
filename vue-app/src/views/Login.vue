@@ -37,11 +37,11 @@ import { ref, reactive } from 'vue'
 import axios from 'axios'
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
-// import { useAuthStore } from '../stores/loginAuth.js';
+import { useAuthStore } from '../stores/loginAuth.js';
 
 const ruleFormRef = ref()
 const router = useRouter();
-// const loginStore = useAuthStore();
+const loginStore = useAuthStore();
 
 const loginUser = ref({
     account: '',
@@ -73,6 +73,9 @@ const handleSubmit = (formEl) => {
                 localStorage.setItem('user_id', id)
                 localStorage.setItem('user_account', account)
 
+                loginStore.setAuth(true)
+                loginStore.setUser(account)
+
                 Swal.fire({
                     title: '登入成功',
                     icon: 'success',
@@ -80,6 +83,8 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 })
+
+                router.push('/');
             }
         }else{
             return false;
