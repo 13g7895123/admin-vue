@@ -7,7 +7,7 @@ const loginStore = useAuthStore()
 watchEffect(() => {
   if(localStorage.user_account){
     loginStore.setAuth(true)
-    loginStore.setUser(localStorage.user_account)
+    loginStore.setUser(localStorage.userAccount)
   }
 })
 

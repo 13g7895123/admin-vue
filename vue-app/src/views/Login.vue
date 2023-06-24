@@ -70,8 +70,8 @@ const handleSubmit = (formEl) => {
             if (success && user){
                 
                 const { id, account } = user
-                localStorage.setItem('user_id', id)
-                localStorage.setItem('user_account', account)
+                localStorage.setItem('userId', id)
+                localStorage.setItem('userAccount', account)
 
                 loginStore.setAuth(true)
                 loginStore.setUser(account)

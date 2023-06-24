@@ -36,10 +36,35 @@
 </template>
   
 <script setup>
-  import { ArrowDown } from "@element-plus/icons-vue";
+import { ArrowDown } from "@element-plus/icons-vue";
+import { useAuthStore } from "../stores/loginAuth";
+
 const handleDropdown = (item) => {
   console.log(item);
+  switch (item) {
+    case 'info':
+      showUserInfo();
+      break;
+    case 'logout':
+      logout();
+      break;
+  }
 };
+
+const showUserInfo = () => {
+  console.log('跳轉至個人訊息');
+}
+
+const logout = () => {
+  console.log('登出');
+
+  localStorage.removeItem('userId')
+  localStorage.removeItem('userAccount')
+
+  const loginAuth = useAuthStore()
+  loginAuth.setAuth(false)
+  loginAuth.setUser('')
+}
 </script>
   
   <style scoped>
