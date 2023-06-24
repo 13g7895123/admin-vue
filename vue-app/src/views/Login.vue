@@ -70,7 +70,10 @@ const handleSubmit = (formEl) => {
             console.log(user);
 
             if (success && user){
-                const { user_data: { id, account }} = user
+                // const { user_data: { id, account }} = user
+                const { user_data } = user
+                console.log(user_data);
+
                 localStorage.setItem('user_id', id)
                 localStorage.setItem('user_account', account)
                 Swal.fire({
