@@ -82,9 +82,9 @@ const handleSubmit = (formEl) => {
                     showConfirmButton: false,
                     showCancelButton: false,
                     timer: 2000,
+                }).then(() => {
+                    router.push('/');
                 })
-
-                router.push('/');
             }
         }else{
             return false;
