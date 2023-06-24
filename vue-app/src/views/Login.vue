@@ -66,7 +66,8 @@ const handleSubmit = (formEl) => {
                 'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
                 loginUser.value
             )
-            console.log(success);
+
+            console.log(user);
 
             if (success && user){
                 localStorage.setItem('user', user)
@@ -78,42 +79,6 @@ const handleSubmit = (formEl) => {
                     timer: 2000,
                 })
             }
-            // .then((response) => {                      // 回傳為object
-            //     response = JSON.stringify(response)     // 轉為json string
-            //     response = JSON.parse(response)         // 轉為json object
-
-            //     const data = response.data              // 取出資料
-
-            //     if (data.success){
-
-            //         console.log(data.user.account);
-            //         sessionStorage.setItem('account') = data.user.account;
-
-            //         // loginStore.setAuth(true);
-            //         // loginStore.setUser = data.user.account;
-
-            //         Swal.fire({
-            //             title: '登入成功',
-            //             icon: 'success',
-            //             showConfirmButton: false,
-            //             showCancelButton: false,
-            //             timer: 2000,
-            //         }).then(() => {
-            //             router.push("/")
-            //         })
-            //     }else{
-            //         Swal.fire({
-            //             title: '登入失敗',
-            //             text: data.msg,
-            //             icon: 'error',
-            //             showConfirmButton: false,
-            //             showCancelButton: false,
-            //             timer: 2000,
-            //         }) 
-            //     }
-            // }).catch(() => {
-            //     alert(data.msg)
-            // })
         }else{
             return false;
         }
