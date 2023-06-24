@@ -69,7 +69,7 @@ const handleSubmit = (formEl) => {
 
             // console.log(user);
 
-            const { user_data: { id, account } } = user
+            const { id, account } = user
             console.log(id);
 
             if (success && user){
