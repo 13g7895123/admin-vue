@@ -38,7 +38,7 @@
 <script setup>
 import { ArrowDown } from "@element-plus/icons-vue";
 import { useAuthStore } from "../stores/loginAuth";
-import { routerKey } from "vue-router";
+import { useRouter } from "vue-router";
 
 const handleDropdown = (item) => {
   console.log(item);
@@ -66,7 +66,8 @@ const logout = () => {
   loginAuth.setAuth(false)
   loginAuth.setUser('')
 
-  routerKey.push('/login')
+  const router = useRouter()
+  router.push('/login')
 }
 </script>
   
