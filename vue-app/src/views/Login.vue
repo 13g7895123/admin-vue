@@ -70,7 +70,9 @@ const handleSubmit = (formEl) => {
             console.log(user);
 
             if (success && user){
-                localStorage.setItem('user', user)
+                const { user_data: { id, account }} = user
+                localStorage.setItem('user_id', id)
+                localStorage.setItem('user_account', account)
                 Swal.fire({
                     title: '登入成功',
                     icon: 'success',
