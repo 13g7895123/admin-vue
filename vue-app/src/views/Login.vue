@@ -60,11 +60,11 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            const { data: { data }} = await axios.post(
+            const { data: { inner_data }} = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
                 loginUser.value
             )
-            console.log(data.success);
+            console.log(inner_data);
             // .then((response) => {                      // 回傳為object
             //     response = JSON.stringify(response)     // 轉為json string
             //     response = JSON.parse(response)         // 轉為json object
