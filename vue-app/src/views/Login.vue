@@ -60,45 +60,47 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            const datas = await axios.post(
+            const data = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
                 loginUser.value
-            ).then((response) => {                      // 回傳為object
-                response = JSON.stringify(response)     // 轉為json string
-                response = JSON.parse(response)         // 轉為json object
+            )
+            console.log(data);
+            // .then((response) => {                      // 回傳為object
+            //     response = JSON.stringify(response)     // 轉為json string
+            //     response = JSON.parse(response)         // 轉為json object
 
-                const data = response.data              // 取出資料
+            //     const data = response.data              // 取出資料
 
-                if (data.success){
+            //     if (data.success){
 
-                    console.log(data.user.account);
-                    sessionStorage.setItem('account') = data.user.account;
+            //         console.log(data.user.account);
+            //         sessionStorage.setItem('account') = data.user.account;
 
-                    // loginStore.setAuth(true);
-                    // loginStore.setUser = data.user.account;
+            //         // loginStore.setAuth(true);
+            //         // loginStore.setUser = data.user.account;
 
-                    Swal.fire({
-                        title: '登入成功',
-                        icon: 'success',
-                        showConfirmButton: false,
-                        showCancelButton: false,
-                        timer: 2000,
-                    }).then(() => {
-                        router.push("/")
-                    })
-                }else{
-                    Swal.fire({
-                        title: '登入失敗',
-                        text: data.msg,
-                        icon: 'error',
-                        showConfirmButton: false,
-                        showCancelButton: false,
-                        timer: 2000,
-                    }) 
-                }
-            }).catch(() => {
-                alert(data.msg)
-            })
+            //         Swal.fire({
+            //             title: '登入成功',
+            //             icon: 'success',
+            //             showConfirmButton: false,
+            //             showCancelButton: false,
+            //             timer: 2000,
+            //         }).then(() => {
+            //             router.push("/")
+            //         })
+            //     }else{
+            //         Swal.fire({
+            //             title: '登入失敗',
+            //             text: data.msg,
+            //             icon: 'error',
+            //             showConfirmButton: false,
+            //             showCancelButton: false,
+            //             timer: 2000,
+            //         }) 
+            //     }
+            // }).catch(() => {
+            //     alert(data.msg)
+            // })
         }else{
             return false;
         }
