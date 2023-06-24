@@ -67,6 +67,17 @@ const handleSubmit = (formEl) => {
                 loginUser.value
             )
             console.log(success);
+
+            if (success && user){
+                localStorage.setItem('user', user)
+                Swal.fire({
+                    title: '登入成功',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                })
+            }
             // .then((response) => {                      // 回傳為object
             //     response = JSON.stringify(response)     // 轉為json string
             //     response = JSON.parse(response)         // 轉為json object
