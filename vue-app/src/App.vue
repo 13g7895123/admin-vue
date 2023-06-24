@@ -1,5 +1,5 @@
 <script setup>
-import { WatchEffect, watchEffect } from 'vue';
+import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth';
 
 const loginStore = useAuthStore
