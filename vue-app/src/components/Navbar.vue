@@ -11,7 +11,7 @@
           <img src="../assets/default.jpeg" class="avatar" alt="" />
           <div class="welcome-content">
             <p class="content welcome">Welcome</p>
-            <p class="content username">米斯特吴</p>
+            <p class="content username">loginStore.user</p>
           </div>
           <span class="dropdown">
             <!-- <el-dropdown> -->
@@ -43,7 +43,6 @@ import { useRouter } from "vue-router";
 const router = useRouter()
 
 const handleDropdown = (item) => {
-  console.log(item);
   switch (item) {
     case 'info':
       showUserInfo();
@@ -59,29 +58,22 @@ const showUserInfo = () => {
 }
 
 const logout = () => {
-  console.log('登出');
 
+  // 清空 local storage
   localStorage.removeItem('userId')
   localStorage.removeItem('userAccount')
 
+  // 變更 login auth 狀態
   const loginAuth = useAuthStore()
   loginAuth.setAuth(false)
   loginAuth.setUser('')
 
+  // 跳轉頁面
   router.push('/login')
 }
 </script>
   
   <style scoped>
-  /* .nav {
-    width: 100%;
-    height: 60px;
-    min-width: 600px;
-    padding: 5px;
-    background: #074c62;
-    color: #fff;
-    border-bottom: 1px solid #1f2d3d;
-  } */
   
   .logo-container {
     line-height: 60px;
