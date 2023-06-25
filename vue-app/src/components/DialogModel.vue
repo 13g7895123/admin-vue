@@ -3,6 +3,6 @@
 </template>
 <script setup>
 defineProps({
-    show: {}
+    show
 })
 </script>
