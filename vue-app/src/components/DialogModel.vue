@@ -6,7 +6,6 @@
         <el-form
             :model="dialogData"
             ref="dialogRef"
-            :rules="dialogRules"
             label-width="120px"
             style="margin: 10px; width: auto"
             >
@@ -43,8 +42,14 @@
             <el-form-item prop="MICate" label="醫療機構種類">
                 <!-- <el-input v-model="dialogData.MICate"></el-input> -->
                 <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
-                    <el-option :label="自開藥局" :value="自開藥局"></el-option>
-                    <el-option :label="受聘藥師" :value="受聘藥師"></el-option>
+                    <el-option
+                        v-for="(formType, index) in miCate"
+                        :key="index"
+                        :label="formType"
+                        :value="formType"
+                    ></el-option>
+                    <!-- <el-option :label="自開藥局" :value="自開藥局"></el-option>
+                    <el-option :label="受聘藥師" :value="受聘藥師"></el-option> -->
                     <!-- <el-option>受聘藥師</el-option> -->
                 </el-select>
             </el-form-item>
@@ -59,6 +64,7 @@
 import { ref } from 'vue'
 
 const dialogRef = ref()
+const miCate = ref(['自開藥局', '受聘醫師'])
 
 const dialogData = ref({
     name: '',               // 聯絡人
