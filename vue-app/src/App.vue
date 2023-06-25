@@ -1,10 +1,10 @@
 <script setup>
 import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const loginStore = useAuthStore()
-const router = useRoute()
+const router = useRouter()
 
 watchEffect(() => {
   if(localStorage.user_account){
