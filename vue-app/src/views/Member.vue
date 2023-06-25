@@ -7,17 +7,17 @@
       v-if="tableData.length > 0"
     >
       <el-table-column type="index" label="編號" align="center" width="70" />
-      <el-table-column label="帳號" align="center" width="auto" prop="account" />
+      <el-table-column label="帳號" align="center" width="50" prop="account" />
       <el-table-column
         label="名稱"
         align="center"
-        width="auto"
+        width="50"
         prop="user_name"
       />
       <el-table-column
         label="電話"
         align="center"
-        width="auto"
+        width="50"
         prop="phone"
       />
       <el-table-column label="信箱" align="center" width="auto" prop="mail" />
