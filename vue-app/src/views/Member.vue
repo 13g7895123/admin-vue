@@ -29,9 +29,8 @@
                         <el-icon><EditPen /></el-icon>
                     </el-button>
                     <el-button
-                        size="large"
+                        size="small"
                         type="danger"
-                        class="text-red"
                         @click="handleDelete(scope.$idnex, scope.row)">
                         <el-icon><Delete /></el-icon>
                     </el-button>
