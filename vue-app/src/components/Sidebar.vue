@@ -1,5 +1,5 @@
 <template>
-    <!-- 侧边栏 -->
+    <!-- 側邊欄 -->
     <el-row class="menu-container">
       <el-col :span="12">
         <el-menu
@@ -9,14 +9,18 @@
           default-active="1"
           text-color="#fff"
         >
-          <el-menu-item index="1">
-            <el-icon><UserFilled /></el-icon>
-            <span>會員管理</span>
-          </el-menu-item>
-          <el-menu-item index="2">
-            <el-icon><List /></el-icon>
-            <span>藥品管理</span>
-          </el-menu-item>
+            <router-link to="/member">
+                <el-menu-item index="1">
+                    <el-icon><UserFilled /></el-icon>
+                    <span>會員管理</span>
+                </el-menu-item>
+            </router-link>
+            <router-link to="/medicine">
+                <el-menu-item index="2">
+                    <el-icon><List /></el-icon>
+                    <span>藥品管理</span>
+                </el-menu-item>
+            </router-link>
           <!-- <el-sub-menu index="2">
             <template #title>
               <el-icon><location /></el-icon>
