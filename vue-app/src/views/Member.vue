@@ -2,7 +2,6 @@
     <div class="h-full px-5 py-3">
         <el-table
         :data="tableData"
-        style="width: 95%"
         max-height="450"
         border
         v-if="tableData.length > 0"
