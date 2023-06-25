@@ -13,6 +13,7 @@ const props = defineProps({
 })
 
 const handleClose = () => {
+    console.log('close dialog');
     emits("closeModal");
 }
 
