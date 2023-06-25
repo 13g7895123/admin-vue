@@ -37,12 +37,12 @@
                     </el-button>
                 </template>
             </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="auto" />
-            <el-table-column label="帳號" align="center" width="auto" prop="account" />
+            <el-table-column type="index" label="編號" align="center" width="100" />
+            <el-table-column label="帳號" align="center" width="200" prop="account" />
             <el-table-column
                 label="名稱"
                 align="center"
-                width="auto"
+                width="200"
                 prop="user_name"
             />
             <el-table-column
