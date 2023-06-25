@@ -8,7 +8,7 @@ const loginStore = useAuthStore()
 const router = useRouter()
 
 watchEffect(() => {
-  if(localStorage.user_account){
+  if(localStorage.userAccount){
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
   }else{
