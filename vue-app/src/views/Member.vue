@@ -61,6 +61,7 @@ import axios from 'axios';
 
 const tableData = ref([])
 const show = ref(false)
+const editData = ref()
 
 const getMember = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-member.php')
@@ -69,10 +70,18 @@ const getMember = async() => {
 }
 
 watchEffect(() => getMember())
-const handleEdit = (row) => {}
-const handleDelete = (row, indx) => {}
+
+const handleEdit = (row) => {
+    show.value = true
+    editData.value = row
+}
+const handleDelete = (row) => {}
 const handleAdd = () => {
     show.value = true
+}
+
+const handelUpdateMember = () => {
+    getMember()
 }
 
 </script>
