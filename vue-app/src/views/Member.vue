@@ -1,5 +1,14 @@
 <template>
     <div class="h-full px-5 py-3">
+        <div>
+            <el-form :inline="true">
+                <el-form-item class="float-right">
+                    <el-button type="primary" size="small" @click="handleAdd"
+                        >新增</el-button
+                    >
+                </el-form-item>
+            </el-form>
+        </div>
         <el-table
         :data="tableData"
         max-height="450"
