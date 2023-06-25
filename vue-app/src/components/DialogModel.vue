@@ -43,8 +43,9 @@
             <el-form-item prop="MICate" label="醫療機構種類">
                 <!-- <el-input v-model="dialogData.MICate"></el-input> -->
                 <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
-                    <el-option>自開藥局</el-option>
-                    <el-option>受聘藥師</el-option>
+                    <el-option :label="自開藥局" :value="自開藥局"></el-option>
+                    <el-option :label="受聘藥師" :value="受聘藥師"></el-option>
+                    <!-- <el-option>受聘藥師</el-option> -->
                 </el-select>
             </el-form-item>
             <el-form-item class="text-right">
