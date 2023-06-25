@@ -25,8 +25,7 @@
                 <template #default="scope">
                     <el-button
                         size="small"
-                        
-                        class="bg-green text-white"
+                        type="primary"
                         @click="handleEdit(scope.row)">
                         <el-icon><EditPen /></el-icon>
                     </el-button>
