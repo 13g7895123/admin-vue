@@ -19,7 +19,7 @@
         <el-table-column
                 label="操作"
                 align="center"
-                width="70"
+                width="100"
                 prop="operation"
             >
                 <template #default="scope">
