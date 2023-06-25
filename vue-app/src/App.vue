@@ -11,7 +11,16 @@ watchEffect(() => {
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
   }else{
-    router.push('/login')
+    Swal.fire({
+      title: '驗證失敗',
+      text: '跳轉至登入畫面',
+      icon: 'error',
+      showConfirmButton: false,
+      showCancelButton: false,
+      timer: 2000,
+    }).then(() => {
+      router.push('/login')
+    })
   }
 })
 
