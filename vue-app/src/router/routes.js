@@ -3,6 +3,10 @@ const routes = [
         path: "/",
         name: 'Home',
         component: () => import('../views/Home.vue'),
+        children: [
+            { path: "/member", component: () => import('../views/Member.vue')},
+            { path: "/medicine", component: () => import('../views/Medicine.vue')},
+        ]
     },
     {
         path: "/register",
@@ -13,16 +17,6 @@ const routes = [
         path: "/login",
         name: 'Login',
         component: () => import('../views/Login.vue'),
-    },
-    {
-        path: "/member",
-        name: 'Member',
-        component: () => import('../views/Member.vue'),
-    },
-    {
-        path: "/medicine",
-        name: 'Medicine',
-        component: () => import('../views/Medicine.vue'),
     },
     {
         path: '/:catchAll(.*)',
