@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full px-5 py-3">
+    <div class="w-[calc(100vw - 190px)] h-full px-5 py-3">
         <el-table
         :data="tableData"
         max-height="450"
