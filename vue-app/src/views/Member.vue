@@ -53,12 +53,14 @@
             </el-table-column>
         </el-table>
     </div>
+    <DialogModel :show="show" />
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
 
 const tableData = ref([])
+const show = ref(false)
 
 const getMember = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-member.php')
@@ -67,4 +69,10 @@ const getMember = async() => {
 }
 
 watchEffect(() => getMember())
+const handleEdit = (row) => {}
+const handleDelete = (row, indx) => {}
+const handleAdd = () => {
+    show.value = true
+}
+
 </script>
