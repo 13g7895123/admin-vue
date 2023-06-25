@@ -10,11 +10,11 @@
           text-color="#fff"
         >
           <el-menu-item index="1">
-            <!-- <el-icon><icon-menu /></el-icon> -->
+            <el-icon><UserFilled /></el-icon>
             <span>會員管理</span>
           </el-menu-item>
           <el-menu-item index="2">
-            <!-- <el-icon><icon-menu /></el-icon> -->
+            <el-icon><List /></el-icon>
             <span>藥品管理</span>
           </el-menu-item>
           <!-- <el-sub-menu index="2">
@@ -38,42 +38,44 @@
         </el-menu>
       </el-col>
     </el-row>
-  </template>
-  
-  <script setup lang="ts">
-  </script>
-  
-  <style scoped>
-  .menu-container {
+</template>
+
+<script setup>
+import { UserFilled, List } from "@element-plus/icons-vue";
+
+</script>
+
+<style scoped>
+.menu-container {
     position: fixed;
     top: 71px;
     left: 0;
     min-height: 100%;
     background-color: #074c62;
     z-index: 99;
-  }
-  .el-menu {
+}
+.el-menu {
     border: none;
-  }
-  .fa-margin {
+}
+.fa-margin {
     margin-right: 5px;
-  }
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 180px;
-    min-height: 100vh;
-  }
-  .el-menu-vertical-demo {
-    width: 35px;
-  }
-  .el-sub-menu .el-menu-item {
-    min-width: 180px;
-  }
-  
-  .hiddenDropdown,
-  .hiddenDropname {
-    display: none;
-  }
-  a {
-    text-decoration: none;
-  }
-  </style>
+}
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+width: 180px;
+min-height: 100vh;
+}
+.el-menu-vertical-demo {
+width: 35px;
+}
+.el-sub-menu .el-menu-item {
+min-width: 180px;
+}
+
+.hiddenDropdown,
+.hiddenDropname {
+display: none;
+}
+a {
+text-decoration: none;
+}
+</style>
