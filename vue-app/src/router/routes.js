@@ -15,6 +15,16 @@ const routes = [
         component: () => import('../views/Login.vue'),
     },
     {
+        path: "/member",
+        name: 'Member',
+        component: () => import('../views/Member.vue'),
+    },
+    {
+        path: "/medicine",
+        name: 'Medicine',
+        component: () => import('../views/Medicine.vue'),
+    },
+    {
         path: '/:catchAll(.*)',
         name: '404',
         component: () => import('../views/404.vue')
