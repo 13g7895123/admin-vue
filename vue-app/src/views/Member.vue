@@ -22,15 +22,18 @@
                 prop="operation"
             >
                 <template #default="scope">
-                <el-button size="small" type="primary" @click="handleEdit(scope.row)"
-                    >编辑</el-button
-                >
-                <el-button
-                    size="small"
-                    type="danger"
-                    @click="handleDelete(scope.$idnex, scope.row)"
-                    >删除</el-button
-                >
+                    <el-button
+                        size="small"
+                        type="primary"
+                        @click="handleEdit(scope.row)">
+                        <el-icon><EditPen /></el-icon>
+                    </el-button>
+                    <el-button
+                        size="small"
+                        type="danger"
+                        @click="handleDelete(scope.$idnex, scope.row)">
+                        <el-icon><EditPen /></el-icon>
+                    </el-button>
                 </template>
             </el-table-column>
             <el-table-column type="index" label="編號" align="center" width="auto" />
@@ -59,6 +62,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
+import { EditPen, Delete } from "@element-plus/icons-vue";
 
 const tableData = ref([])
 const show = ref(false)
