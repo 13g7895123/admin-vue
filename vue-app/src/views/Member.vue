@@ -58,7 +58,10 @@
             
         </el-table>
     </div>
-    <DialogModel :show="show" />
+    <DialogModel 
+        :show="show"
+        @closeModel="show = false"
+        />
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
