@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full px-5 py-3 overflow-hidden">
+    <div class="w-full h-full overflow-hidden">
         <Navbar />
         <Sidebar />
         <div class="relative top-0 left-[180px] w-[calc(100vw - 190px)] h-[calc(100% - 71px)] overflow-auto">
