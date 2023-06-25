@@ -1,8 +1,8 @@
 <template>
-    <el-dialog v-model="show"></el-dialog>
+    <el-dialog v-model="props.show"></el-dialog>
 </template>
 <script setup>
-defineProps({
-    show
+const props = defineProps({
+    show: String
 })
 </script>
