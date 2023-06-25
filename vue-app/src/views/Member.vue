@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full px-5 py-3">
+    <div class="h-full px-5 py-3">
         <el-table
         :data="tableData"
         style="width: 95%"
