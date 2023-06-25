@@ -3,6 +3,6 @@
 </template>
 <script setup>
 const props = defineProps({
-    show: String
+    show: Boolean
 })
 </script>
