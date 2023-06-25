@@ -61,6 +61,7 @@
     <DialogModel 
         :show="show"
         @closeModel="show = false"
+        :editData="editData"
         />
 </template>
 <script setup>

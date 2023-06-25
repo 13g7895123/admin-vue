@@ -14,8 +14,8 @@ const props = defineProps({
 
 const handleClose = () => {
     console.log('close dialog');
-    emits("closeModle");
+    emits("closeModel");
 }
 
-const emits = defineEmits(["closeModal", "handleUpdateProfiles"]);
+const emits = defineEmits(["closeModel", "handleUpdateProfiles"]);
 </script>
