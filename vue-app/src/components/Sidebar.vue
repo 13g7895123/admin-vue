@@ -11,12 +11,16 @@
         >
           <el-menu-item index="1">
             <!-- <el-icon><icon-menu /></el-icon> -->
-            <span>首页</span>
+            <span>會員管理</span>
           </el-menu-item>
-          <el-sub-menu index="2">
+          <el-menu-item index="2">
+            <!-- <el-icon><icon-menu /></el-icon> -->
+            <span>藥品管理</span>
+          </el-menu-item>
+          <!-- <el-sub-menu index="2">
             <template #title>
-              <!-- <el-icon><location /></el-icon> -->
-              <span>资金管理</span>
+              <el-icon><location /></el-icon>
+              <span>藥品管理</span>
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">资金流水</el-menu-item>
@@ -24,13 +28,13 @@
           </el-sub-menu>
           <el-sub-menu index="3">
             <template #title>
-              <!-- <el-icon><location /></el-icon> -->
-              <span>信息管理</span>
+              <el-icon><location /></el-icon>
+              <span>藥品管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="1-1">个人信息</el-menu-item>
+              <el-menu-item index="1-1"></el-menu-item>
             </el-menu-item-group>
-          </el-sub-menu>
+          </el-sub-menu> -->
         </el-menu>
       </el-col>
     </el-row>
