@@ -2,6 +2,7 @@
 import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
 import { useRouter } from 'vue-router';
+import Swal from 'sweetalert2'
 
 const loginStore = useAuthStore()
 const router = useRouter()
