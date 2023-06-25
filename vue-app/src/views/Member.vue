@@ -12,6 +12,7 @@
         <el-table
         :data="tableData"
         max-height="450"
+        style="width: 100%"
         border
         v-if="tableData.length > 0"
         >
