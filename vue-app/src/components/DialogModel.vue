@@ -61,7 +61,7 @@
     </el-dialog>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
