@@ -32,7 +32,7 @@
                     <el-button
                         size="small"
                         type="danger"
-                        @click="handleDelete(scope.$idnex, scope.row)">
+                        @click="handleDelete(scope.row)">
                         <el-icon><Delete /></el-icon>
                     </el-button>
                 </template>
