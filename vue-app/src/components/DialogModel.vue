@@ -80,6 +80,13 @@ const dialogData = ref({
     MICate: ''
 })
 
+watch(
+  () => props.editData,
+  () => {
+    dialogData.value = props.editData;
+  }
+);
+
 const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
