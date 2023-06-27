@@ -100,14 +100,18 @@ const handleSubmit = (formEl) => {
             )
 
             if (success){
+                handleClose()
                 Swal.fire({
                     title: '新增會員成功',
                     icon: 'success',
                     showConfirmButton: false,
                     showCancelButton: false,
                     timer: 2000,
+                }).then(() => {
+                    history.go(0)
                 })
             }else{
+                handleClose()
                 Swal.fire({
                     title: '新增會員失敗',
                     text: msg,
@@ -122,7 +126,6 @@ const handleSubmit = (formEl) => {
 }
 
 const handleClose = () => {
-    console.log('close dialog');
     emits("closeModel");
 }
 
