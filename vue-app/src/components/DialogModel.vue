@@ -13,10 +13,10 @@
                 <el-input v-model="dialogData.account" type="account" :readonly="!props.operation"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
-                <el-input v-model="dialogData.password" type="password"></el-input>
+                <el-input v-model="dialogData.password" type="password" placeholder="不修改則留空"></el-input>
             </el-form-item>
             <el-form-item prop="passwordCheck" label="密碼確認">
-                <el-input v-model="dialogData.passwordCheck" type="password"></el-input>
+                <el-input v-model="dialogData.passwordCheck" type="password" placeholder="不修改則留空"></el-input>
             </el-form-item>
             <el-form-item prop="phone" label="手機">
                 <el-input v-model="dialogData.phone"></el-input>
