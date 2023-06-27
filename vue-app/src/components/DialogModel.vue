@@ -25,8 +25,8 @@
                 <el-input v-model="dialogData.mail"></el-input>
             </el-form-item>
             <!-- 地址先不開放變更 -->
-            <el-form-item prop="medical_institution_name" label="藥局名稱">
-                <el-input v-model="dialogData.MIName"></el-input>
+            <el-form-item prop="MIName" label="藥局名稱">
+                <el-input v-model="dialogData.medical_institution_name"></el-input>
             </el-form-item>
             <el-form-item prop="MICode" label="醫療機構代號">
                 <el-input v-model="dialogData.MICode"></el-input>
