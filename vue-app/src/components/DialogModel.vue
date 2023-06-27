@@ -50,9 +50,6 @@
                         :label="formType"
                         :value="formType"
                     ></el-option>
-                    <!-- <el-option :label="自開藥局" :value="自開藥局"></el-option>
-                    <el-option :label="受聘藥師" :value="受聘藥師"></el-option> -->
-                    <!-- <el-option>受聘藥師</el-option> -->
                 </el-select>
             </el-form-item>
             <el-form-item class="text-right">
@@ -64,6 +61,7 @@
 </template>
 <script setup>
 import { ref, watch } from 'vue'
+import axios from 'axios'
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
