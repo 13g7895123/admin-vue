@@ -50,6 +50,7 @@
     <DialogModel 
         :show="show"
         :editData="editData"
+        :operation = 'operation'
         @closeModel="closeModel"
         @handleUpdateProfiles="handelUpdateMember"
         />
