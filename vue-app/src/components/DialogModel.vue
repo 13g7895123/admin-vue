@@ -72,7 +72,6 @@ const dialogData = ref({
 })
 
 watch(
-    console.log(props.editData),
     () => props.editData,
     () => {
         dialogData.value = props.editData;
