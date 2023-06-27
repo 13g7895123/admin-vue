@@ -9,7 +9,9 @@
             label-width="120px"
             style="margin: 10px; width: auto"
             >
-            
+            <el-form-item prop="account" label="帳號">
+                <el-input v-model="dialogData.account" type="account"></el-input>
+            </el-form-item>
             <el-form-item prop="password" label="密碼">
                 <el-input v-model="dialogData.password" type="password"></el-input>
             </el-form-item>
@@ -67,6 +69,7 @@ const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
 
 const dialogData = ref({
+    account: '',
     name: '',               // 聯絡人
     password: '',           // 密碼
     passwordCheck: '',      // 密碼確認
@@ -85,7 +88,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const { data } = await axios.post(
-                'http://139.162.15.125:9090/api/health-insurance/admin-addMember.php',
+                'http://139.162.15.125:9090/api/health-insurance/admin-member-add.php',
                 dialogData.value
             )
         }
