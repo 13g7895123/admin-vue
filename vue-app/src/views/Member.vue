@@ -19,7 +19,7 @@
         <el-table-column
                 label="操作"
                 align="center"
-                width="130"
+                width="auto"
                 prop="operation"
             >
                 <template #default="scope">
@@ -32,7 +32,7 @@
                     <el-button
                         size="small"
                         type="danger"
-                        @click="handleDelete(scope.$idnex, scope.row)">
+                        @click="handleDelete(scope.row)">
                         <el-icon><Delete /></el-icon>
                     </el-button>
                 </template>
