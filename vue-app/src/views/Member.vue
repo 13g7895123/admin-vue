@@ -42,9 +42,9 @@
             <el-table-column label="名稱" align="center" width="200" prop="user_name"/>
             <el-table-column label="電話" align="center" width="200" prop="phone"/>
             <el-table-column label="信箱" align="center" width="200" prop="mail"/>
-            <el-table-column label="地址" align="center" width="200" prop="address_country"/>
-            <el-table-column label="機構代號" align="center" width="200" prop="medical_institution_code"/>
-            <el-table-column label="藥局名稱" align="center" width="200" prop="medical_institution_name"/>
+            <el-table-column label="地址" align="center" width="200" prop="address1"/>
+            <el-table-column label="機構代號" align="center" width="200" prop="MICode"/>
+            <el-table-column label="藥局名稱" align="center" width="200" prop="MIName"/>
         </el-table>
     </div>
     <DialogModel 
