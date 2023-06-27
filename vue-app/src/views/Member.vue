@@ -62,6 +62,7 @@ import { EditPen, Delete } from "@element-plus/icons-vue";
 const tableData = ref([])
 const show = ref(false)
 const editData = ref()
+const operation = ref()   // 0為編輯，1為新增
 
 const getMember = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-member.php')
@@ -77,15 +78,17 @@ watchEffect(() => getMember())
 
 const handleAdd = () => {
     console.log('add click')
-    console.log(editData.value);
+    console.log(editData.value)
     show.value = true
+    operation.value = 1
 }
 
 const handleEdit = (row) => {
     console.log('edit click')
-    console.log(editData.value);
+    console.log(row);
     show.value = true
     editData.value = row
+    operation.value = 0
 }
 
 const handleDelete = (row) => {}

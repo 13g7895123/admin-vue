@@ -117,10 +117,12 @@ const handleClose = () => {
     emits("closeModel");
 }
 
+// 接收父層資料
 const props = defineProps({
     show: Boolean,
     editData: Object
 })
 
+// 回傳至父層，要觸發的方法
 const emits = defineEmits(["closeModel", "handleUpdateProfiles"]);
 </script>
