@@ -32,7 +32,7 @@
                 <el-input v-model="dialogData.medical_institution_code"></el-input>
             </el-form-item>
             <el-form-item prop="MICate" label="醫療機構種類">
-                <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
+                <el-select v-model="dialogData.medical_institution_cate" placeholder="醫療機構種類">
                     <el-option
                         v-for="(formType, index) in miCate"
                         :key="index"
