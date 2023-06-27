@@ -10,7 +10,7 @@
             style="margin: 10px; width: auto"
             >
             <el-form-item prop="account" label="帳號">
-                <el-input v-model="dialogData.account" type="account"></el-input>
+                <el-input v-model="dialogData.account" type="account" :readonly="!props.operation"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
                 <el-input v-model="dialogData.password" type="password"></el-input>
