@@ -29,7 +29,7 @@
                 <el-input v-model="dialogData.medical_institution_name"></el-input>
             </el-form-item>
             <el-form-item prop="MICode" label="醫療機構代號">
-                <el-input v-model="dialogData.MICode"></el-input>
+                <el-input v-model="dialogData.medical_institution_code"></el-input>
             </el-form-item>
             <el-form-item prop="MICate" label="醫療機構種類">
                 <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
