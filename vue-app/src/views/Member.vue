@@ -78,18 +78,20 @@ watchEffect(() => getMember())
 
 const handleAdd = () => {
     console.log('add click')
-    console.log(operation.value)
+    
     show.value = true
     operation.value = 1
+    console.log(operation.value)
 }
 
 const handleEdit = (row) => {
     console.log('edit click')
-    console.log(operation.value)
+    
     console.log(row);
     show.value = true
     editData.value = row
     operation.value = 0
+    console.log(operation.value)
 }
 
 const handleDelete = (row) => {}
