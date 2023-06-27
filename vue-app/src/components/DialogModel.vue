@@ -2,7 +2,7 @@
     <el-dialog 
         :before-close="handleClose"
         v-model="props.show"
-        :title="props.editData ? '編輯會員資料' : '新增會員資料'">
+        :title="props.operation ? '新增會員資料' : '編輯會員資料'">
         <el-form
             :model="dialogData"
             ref="dialogRef"
@@ -120,7 +120,8 @@ const handleClose = () => {
 // 接收父層資料
 const props = defineProps({
     show: Boolean,
-    editData: Object
+    editData: Object,
+    operation: Boolean
 })
 
 // 回傳至父層，要觸發的方法
