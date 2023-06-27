@@ -62,6 +62,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import axios from 'axios'
+import { mapStores } from 'pinia';
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
@@ -92,10 +93,29 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            const { data } = await axios.post(
+            const { data: { success, msg } } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-member-add.php',
                 dialogData.value
             )
+
+            if (success){
+                Swal.fire({
+                    title: '新增會員成功',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                })
+            }else{
+                Swal.fire({
+                    title: '新增會員失敗',
+                    text: msg,
+                    icon: 'error',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                })
+            }
         }
     })
 }
