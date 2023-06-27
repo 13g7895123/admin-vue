@@ -75,14 +75,20 @@ const getMember = async() => {
 
 watchEffect(() => getMember())
 
+const handleAdd = () => {
+    console.log('add click')
+    console.log(editData.value);
+    show.value = true
+}
+
 const handleEdit = (row) => {
+    console.log('edit click')
+    console.log(editData.value);
     show.value = true
     editData.value = row
 }
+
 const handleDelete = (row) => {}
-const handleAdd = () => {
-    show.value = true
-}
 
 const handelUpdateMember = () => {
     getMember()
