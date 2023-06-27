@@ -2,7 +2,7 @@
     <el-dialog 
         :before-close="handleClose"
         v-model="props.show"
-        :title="editData ? '編輯會員資料' : '新增會員資料'">
+        :title="props.editData ? '編輯會員資料' : '新增會員資料'">
         <el-form
             :model="dialogData"
             ref="dialogRef"
