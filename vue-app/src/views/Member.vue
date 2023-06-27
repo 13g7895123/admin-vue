@@ -37,31 +37,21 @@
                     </el-button>
                 </template>
             </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="100" />
-            <el-table-column label="帳號" align="center" width="200" prop="account" />
-            <el-table-column
-                label="名稱"
-                align="center"
-                width="200"
-                prop="user_name"
-            />
-            <el-table-column
-                label="電話"
-                align="center"
-                width="200"
-                prop="phone"
-            />
-            <el-table-column label="信箱" align="center" width="200" prop="mail" />
-            <el-table-column label="地址" align="center" width="200" prop="address_country" />
-            <el-table-column label="機構代號" align="center" width="200" prop="medical_institution_code" />
-            <el-table-column label="藥局名稱" align="center" width="200" prop="medical_institution_name" />
-            
+            <el-table-column type="index" label="編號" align="center" width="100"/>
+            <el-table-column label="帳號" align="center" width="200" prop="account"/>
+            <el-table-column label="名稱" align="center" width="200" prop="user_name"/>
+            <el-table-column label="電話" align="center" width="200" prop="phone"/>
+            <el-table-column label="信箱" align="center" width="200" prop="mail"/>
+            <el-table-column label="地址" align="center" width="200" prop="address_country"/>
+            <el-table-column label="機構代號" align="center" width="200" prop="medical_institution_code"/>
+            <el-table-column label="藥局名稱" align="center" width="200" prop="medical_institution_name"/>
         </el-table>
     </div>
     <DialogModel 
         :show="show"
-        @closeModel="show = false"
         :editData="editData"
+        @closeModel="closeModel"
+        @handleUpdateProfiles="handelUpdateMember"
         />
 </template>
 <script setup>
@@ -96,6 +86,11 @@ const handleAdd = () => {
 
 const handelUpdateMember = () => {
     getMember()
+}
+
+const closeModel = () => {
+    show.value = false
+    editData.value = {}
 }
 
 </script>
