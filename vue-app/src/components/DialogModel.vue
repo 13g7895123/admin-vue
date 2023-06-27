@@ -2,7 +2,7 @@
     <el-dialog 
         :before-close="handleClose"
         v-model="props.show"
-        :title="(editData.length > 0) ? '編輯會員資料' : '新增會員資料'">
+        :title="editData ? '編輯會員資料' : '新增會員資料'">
         <el-form
             :model="dialogData"
             ref="dialogRef"
@@ -72,10 +72,11 @@ const dialogData = ref({
 })
 
 watch(
-  () => props.editData,
-  () => {
-    dialogData.value = props.editData;
-  }
+    console.log(props.editData),
+    () => props.editData,
+    () => {
+        dialogData.value = props.editData;
+    }
 );
 
 const handleSubmit = (formEl) => {
