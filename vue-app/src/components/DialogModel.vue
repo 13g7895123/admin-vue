@@ -41,7 +41,7 @@
                 ></el-option>
                 </el-select>
             </el-form-item> -->
-            <el-form-item prop="MICate" label="醫療機構種類123">
+            <el-form-item prop="MICate" label="醫療機構種類">
                 <!-- <el-input v-model="dialogData.MICate"></el-input> -->
                 <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
                     <el-option
