@@ -63,6 +63,7 @@
 import { ref, watch } from 'vue'
 import axios from 'axios'
 import { mapStores } from 'pinia';
+import Swal from 'sweetalert2'
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
