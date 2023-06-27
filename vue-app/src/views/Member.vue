@@ -75,8 +75,12 @@ const editData = ref()
 
 const getMember = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-member.php')
-    console.log(data);
-    tableData.value = data
+
+    if (success){
+        tableData.value = data
+    }else{
+        history.go(0)
+    }
 }
 
 watchEffect(() => getMember())

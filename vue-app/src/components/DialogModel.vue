@@ -31,18 +31,7 @@
             <el-form-item prop="MICode" label="醫療機構代號">
                 <el-input v-model="dialogData.MICode"></el-input>
             </el-form-item>
-            <!-- <el-form-item label="收支类型">
-                <el-select v-model="formData.type" placeholder="收支类型">
-                <el-option
-                    v-for="(formType, index) in typeList"
-                    :key="index"
-                    :label="formType"
-                    :value="formType"
-                ></el-option>
-                </el-select>
-            </el-form-item> -->
             <el-form-item prop="MICate" label="醫療機構種類">
-                <!-- <el-input v-model="dialogData.MICate"></el-input> -->
                 <el-select v-model="dialogData.MICate" placeholder="醫療機構種類">
                     <el-option
                         v-for="(formType, index) in miCate"
@@ -62,7 +51,6 @@
 <script setup>
 import { ref, watch } from 'vue'
 import axios from 'axios'
-import { mapStores } from 'pinia';
 import Swal from 'sweetalert2'
 
 const dialogRef = ref()
