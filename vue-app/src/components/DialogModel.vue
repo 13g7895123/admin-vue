@@ -56,7 +56,7 @@ import Swal from 'sweetalert2'
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
 const apiUrlOperation = props.operation ? 'add' : 'edit'
-const apiUrl = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
+const apiUrl = ref()
 
 const dialogData = ref({
     account: '',
@@ -75,7 +75,14 @@ const dialogData = ref({
 
 watch(
     () => props.editData,
-    () => props.operation,
+    () => {
+        if (props.operation == 1){
+            apiUrlOperation = 'add'
+        }else{
+            apiUrlOperation = 'edit'
+        }
+        apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
+    },
     () => {
         dialogData.value = props.editData;
     }
