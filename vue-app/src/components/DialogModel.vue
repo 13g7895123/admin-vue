@@ -92,7 +92,7 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            console.log(apiUrl.value);
+            console.log(apiUrlOperation + '/' + apiUrl.value);
             // const { data: { success, msg } } = await axios.post(
             //     apiUrl,
             //     dialogData.value
