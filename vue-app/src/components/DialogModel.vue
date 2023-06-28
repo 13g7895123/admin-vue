@@ -55,6 +55,8 @@ import Swal from 'sweetalert2'
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
+const apiUrlOperation = props.operation ? 'add' : 'edit'
+const apiUrl = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
 
 const dialogData = ref({
     account: '',
@@ -83,7 +85,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const { data: { success, msg } } = await axios.post(
-                'http://139.162.15.125:9090/api/health-insurance/admin-member-add.php',
+                apiUrl,
                 dialogData.value
             )
 
