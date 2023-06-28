@@ -76,14 +76,6 @@ const dialogData = ref({
 watch(
     () => props.editData,
     () => {
-        if (props.operation == 1){
-            apiUrlOperation = 'add'
-        }else{
-            apiUrlOperation = 'edit'
-        }
-        apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
-    },
-    () => {
         dialogData.value = props.editData;
     }
 );
@@ -92,6 +84,12 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
+            if (props.operation == 1){
+                apiUrlOperation = 'add'
+            }else{
+                apiUrlOperation = 'edit'
+            }
+            apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
             console.log(props.operation + '/' + apiUrlOperation + '/' + apiUrl.value);
             // const { data: { success, msg } } = await axios.post(
             //     apiUrl,
