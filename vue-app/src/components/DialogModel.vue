@@ -83,7 +83,7 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            const apiUrlOperation = props.operation == 1 ? 'add': 'edit'
+            const apiUrlOperation = props.operation == true ? 'add': 'edit'
             const apiUrlOperationText = apiUrlOperation == 'add' ? '新增' : '編輯'
             apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
             const { data: { success, msg } } = await axios.post(

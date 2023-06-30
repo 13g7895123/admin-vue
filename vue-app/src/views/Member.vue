@@ -80,13 +80,13 @@ watchEffect(() => getMember())
 
 const handleAdd = () => {
     show.value = true
-    operation.value = 1
+    operation.value = true
 }
 
 const handleEdit = (row) => {
     show.value = true
     editData.value = row
-    operation.value = 0
+    operation.value = false
 }
 
 const handleDelete = (row) => {}
