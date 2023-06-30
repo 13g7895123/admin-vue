@@ -55,7 +55,6 @@ import Swal from 'sweetalert2'
 
 const dialogRef = ref()
 const miCate = ref(['自開藥局', '受聘醫師'])
-let apiUrlOperation = ''
 const apiUrl = ref()
 
 const dialogData = ref({
@@ -84,40 +83,36 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            if (props.operation == 1){
-                apiUrlOperation = 'add'
-            }else{
-                apiUrlOperation = 'edit'
-            }
+            const apiUrlOperation = props.operation == 1 ? 'add': 'edit'
+            const apiUrlOperationText = apiUrlOperation == 'add' ? '新增' : '編輯'
             apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
-            console.log(props.operation + '/' + apiUrlOperation + '/' + apiUrl.value);
-            // const { data: { success, msg } } = await axios.post(
-            //     apiUrl,
-            //     dialogData.value
-            // )
+            const { data: { success, msg } } = await axios.post(
+                apiUrl,
+                dialogData.value
+            )
 
-            // if (success){
-            //     handleClose()
-            //     Swal.fire({
-            //         title: '新增會員成功',
-            //         icon: 'success',
-            //         showConfirmButton: false,
-            //         showCancelButton: false,
-            //         timer: 2000,
-            //     }).then(() => {
-            //         history.go(0)
-            //     })
-            // }else{
-            //     handleClose()
-            //     Swal.fire({
-            //         title: '新增會員失敗',
-            //         text: msg,
-            //         icon: 'error',
-            //         showConfirmButton: false,
-            //         showCancelButton: false,
-            //         timer: 2000,
-            //     })
-            // }
+            if (success){
+                handleClose()
+                Swal.fire({
+                    title: `${apiUrlOperationText}會員成功`,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                }).then(() => {
+                    history.go(0)
+                })
+            }else{
+                handleClose()
+                Swal.fire({
+                    title: `${apiUrlOperationText}會員失敗`,
+                    text: msg,
+                    icon: 'error',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                })
+            }
         }
     })
 }
