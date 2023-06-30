@@ -87,7 +87,7 @@ const handleSubmit = (formEl) => {
             const apiUrlOperationText = apiUrlOperation == 'add' ? '新增' : '編輯'
             apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
             const { data: { success, msg } } = await axios.post(
-                apiUrl,
+                apiUrl.value,
                 dialogData.value
             )
 
