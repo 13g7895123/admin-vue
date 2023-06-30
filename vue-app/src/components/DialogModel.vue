@@ -100,7 +100,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    history.go(0)
+                    emits('handleUpdateProfiles')
                 })
             }else{
                 handleClose()
