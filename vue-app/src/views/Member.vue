@@ -89,7 +89,9 @@ const handleEdit = (row) => {
     operation.value = false
 }
 
-const handleDelete = (row) => {}
+const handleDelete = (row) => {
+    console.log(row);
+}
 
 const handelUpdateMember = () => {
     getMember()
