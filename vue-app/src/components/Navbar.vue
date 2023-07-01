@@ -11,7 +11,7 @@
           <img src="../assets/user.png" class="avatar" alt="" />
           <div class="welcome-content">
             <p class="content welcome">Welcome</p>
-            <p class="content username">{{ loginAuth.user }}</p>
+            <p class="content username">{{ loginAuth.userName }}</p>
           </div>
           <span class="dropdown">
             <!-- <el-dropdown> -->
