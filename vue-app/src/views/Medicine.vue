@@ -154,8 +154,25 @@ const handelUpdateMedicine = () => {
     getMedicine()
 }
 
-const handleSizeChange = () => {};
-const handleCurrentChange = () => {};
+const handleSizeChange = (pages) => {
+    page_index.value = 1;
+    page_size.value = pages;
+
+    // 重构数据
+    tableData.value = allTableData.value.filter((item, index) => {
+        return index < page_size.value;
+    });
+};
+
+const handleCurrentChange = (page) => {
+    let currentPage = page_size.value * (page - 1);
+    let pageData = allTableData.value.filter((item, index) => {
+        return index >= currentPage;
+    });
+    tableData.value = pageData.filter((item, index) => {
+        return index < page_size.value;
+    });
+};
 
 const setPaginations = () => {
     total.value = allTableData.value.length;
