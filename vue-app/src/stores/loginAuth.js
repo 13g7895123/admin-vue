@@ -12,12 +12,14 @@ export const useAuthStore = defineStore('auth', {
         setAuth(isAuth){
             this.isAuthenticated = isAuth;            
         },
-        setUser(user){
+        setUser(user , userName){
             if(user){
                 this.user = user;
+                this.userName = userName;
             }else {
                 this.user = {}
+                this.userName = {}
             }
-        }
+        },
     }
 })

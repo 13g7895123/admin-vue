@@ -18,7 +18,7 @@
             <el-dropdown trigegr="click" @command="handleDropdown">
               <span class="el-dropdown-link">
                   <el-icon>   
-                  <arrow-down />
+                    <arrow-down />
                   </el-icon>
               </span>
               <template #dropdown>
