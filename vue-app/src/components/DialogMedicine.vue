@@ -2,37 +2,58 @@
     <el-dialog 
         :before-close="handleClose"
         v-model="props.show"
-        :title="props.operation ? '新增會員資料' : '編輯會員資料'">
+        :title="props.operation ? '新增藥品資料' : '編輯藥品資料'">
         <el-form
             :model="dialogData"
             ref="dialogRef"
             label-width="120px"
             style="margin: 10px; width: auto"
             >
-            <el-form-item prop="account" label="帳號">
-                <el-input v-model="dialogData.account" :readonly="!props.operation"></el-input>
+            <el-form-item prop="medicine_code" label="藥品編號">
+                <el-input v-model="dialogData.medicine_code"></el-input>
             </el-form-item>
-            <el-form-item prop="user_name" label="聯絡人">
-                <el-input v-model="dialogData.user_name"></el-input>
+            <el-form-item prop="eng_name" label="英文名">
+                <el-input v-model="dialogData.eng_name"></el-input>
             </el-form-item>
-            <el-form-item prop="password" label="密碼">
-                <el-input v-model="dialogData.password" type="password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
+            <el-form-item prop="medicine_name" label="中文名">
+                <el-input v-model="dialogData.medicine_name"></el-input>
             </el-form-item>
-            <el-form-item prop="passwordCheck" label="密碼確認">
-                <el-input v-model="dialogData.passwordCheck" type="password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
+            <el-form-item prop="ingredient" label="成分">
+                <el-input v-model="dialogData.ingredient"></el-input>
             </el-form-item>
-            <el-form-item prop="phone" label="手機">
-                <el-input v-model="dialogData.phone"></el-input>
+            <el-form-item prop="ingredient_num" label="數量">
+                <el-input v-model="dialogData.ingredient_num"></el-input>
             </el-form-item>
-            <el-form-item prop="mail" label="郵件">
-                <el-input v-model="dialogData.mail"></el-input>
+            <el-form-item prop="specification_quantity" label="特殊用量">
+                <el-input v-model="dialogData.specification_quantity"></el-input>
             </el-form-item>
             <!-- 地址先不開放變更 -->
-            <el-form-item prop="medical_institution_name" label="藥局名稱">
-                <el-input v-model="dialogData.medical_institution_name"></el-input>
+            <el-form-item prop="single_compound" label="單複方">
+                <el-input v-model="dialogData.single_compound"></el-input>
             </el-form-item>
-            <el-form-item prop="medical_institution_code" label="醫療機構代號">
-                <el-input v-model="dialogData.medical_institution_code"></el-input>
+            <el-form-item prop="price" label="價格">
+                <el-input v-model="dialogData.price"></el-input>
+            </el-form-item>
+            <el-form-item prop="start_and_end" label="起訖日">
+                <el-input v-model="dialogData.start_and_end"></el-input>
+            </el-form-item>
+            <el-form-item prop="medicine_manufacturer" label="製造公司">
+                <el-input v-model="dialogData.medicine_manufacturer"></el-input>
+            </el-form-item>
+            <el-form-item prop="dosage" label="劑量類型">
+                <el-input v-model="dialogData.dosage"></el-input>
+            </el-form-item>
+            <el-form-item prop="classification" label="類別">
+                <el-input v-model="dialogData.classification"></el-input>
+            </el-form-item>
+            <el-form-item prop="classification_group" label="類別群組">
+                <el-input v-model="dialogData.classification_group"></el-input>
+            </el-form-item>
+            <el-form-item prop="ATC_code" label="ATC編號">
+                <el-input v-model="dialogData.ATC_code"></el-input>
+            </el-form-item>
+            <el-form-item prop="remark" label="備註">
+                <el-input v-model="dialogData.remark"></el-input>
             </el-form-item>
             <el-form-item class="text-right">
                 <el-button @click="handleClose">取消</el-button>

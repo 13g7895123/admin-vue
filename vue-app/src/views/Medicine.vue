@@ -74,7 +74,7 @@
         </el-row>
     </div>
     
-    <DialogModel 
+    <DialogMedicine 
         :show="show"
         :editData="editData"
         :operation = 'operation'
