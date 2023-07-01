@@ -61,7 +61,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const {
-                data: { success, user },
+                data: { success, user, msg },
             } = await axios.post(
                 'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
                 loginUser.value
@@ -84,6 +84,15 @@ const handleSubmit = (formEl) => {
                     timer: 2000,
                 }).then(() => {
                     router.push('/member');
+                })
+            }else{
+                Swal.fire({
+                    title: '登入失敗',
+                    test: msg,
+                    icon: 'error',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
                 })
             }
         }else{
