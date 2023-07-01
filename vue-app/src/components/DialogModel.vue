@@ -10,7 +10,10 @@
             style="margin: 10px; width: auto"
             >
             <el-form-item prop="account" label="帳號">
-                <el-input v-model="dialogData.account" type="account" :readonly="!props.operation"></el-input>
+                <el-input v-model="dialogData.account" :readonly="!props.operation"></el-input>
+            </el-form-item>
+            <el-form-item prop="account" label="聯絡人">
+                <el-input v-model="dialogData.name" :readonly="!props.operation"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
                 <el-input v-model="dialogData.password" type="password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
