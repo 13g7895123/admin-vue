@@ -23,7 +23,7 @@
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item command="info">个人信息</el-dropdown-item>
+                  <!-- <el-dropdown-item command="info">個人信息</el-dropdown-item> -->
                   <el-dropdown-item command="logout">退出</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
