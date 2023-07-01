@@ -36,4 +36,7 @@ watchEffect(() => {
 </template>
 
 <style scoped>
+body{
+  max-height: 100vh;
+}
 </style>
