@@ -8,7 +8,7 @@
       </el-col>
       <el-col :span="12" class="user">
         <div class="userinfo">
-          <img src="../assets/default.jpeg" class="avatar" alt="" />
+          <img src="../assets/user.png" class="avatar" alt="" />
           <div class="welcome-content">
             <p class="content welcome">Welcome</p>
             <p class="content username">{{ loginAuth.user }}</p>
