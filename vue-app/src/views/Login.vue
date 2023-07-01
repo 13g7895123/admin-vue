@@ -1,6 +1,6 @@
 <template>
-    <div class="relative w-screen h-screen bg-loginBg bg-cover bg-no-repeat bg-center">
-        <section class="w-[370px] h-[210px] absolute top-[20vh] left-1/2 transform -translate-x-1/2 text-center">
+    <div class="relative w-screen h-screen bg-loginBg bg-cover bg-no-repeat bg-center flex">
+        <section class="w-[370px] h-[210px] justify-center items-center text-center">
             <span class="text-[26px] absolute -top-5 left-1/2 transform -translate-x-1/2">後臺管理系統</span>
             <el-form 
             :rules="rules"
