@@ -101,7 +101,16 @@ const handleDelete = async(row) => {
         ajax_data
     )
 
-    if (success){}
+    if (success){
+        Swal.fire({
+            title: `刪除會員成功`,
+            icon: 'success',
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+        })
+        handelUpdateMember()
+    }
 }
 
 const handelUpdateMember = () => {
