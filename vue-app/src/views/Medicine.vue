@@ -95,7 +95,7 @@ const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
 // 分頁
 const page_index = ref(1),
-      page_size = ref(5),
+      page_size = ref(10),
       page_total = ref(0),
       page_sizes = [5, 10, 15, 20],
       layout = "total, sizes, prev, pager, next, jumper"
