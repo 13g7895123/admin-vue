@@ -30,9 +30,13 @@ watchEffect(() => {
 </script>
 
 <template>
-  <el-config-provider :locale="zhTw">
-    <router-view></router-view>
-  </el-config-provider>>  
+  <div class="max-h-screen max-w-screen overflow-hidden">
+    <div id="app">
+      <el-config-provider :locale="zhTw">
+        <router-view></router-view>
+      </el-config-provider>>  
+    </div>
+  </div>
 </template>
 
 <style scoped>
