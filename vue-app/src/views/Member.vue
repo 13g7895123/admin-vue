@@ -90,10 +90,15 @@ const handleEdit = (row) => {
     operation.value = false
 }
 
-const handleDelete = (row) => {
-    const { id, account} = row
-    console.log('delete click' + account);
-    console.log(row);
+const handleDelete = async(row) => {
+    const { account } = row
+
+    const { data: { success, msg } } = await axios.post(
+        `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
+        account
+    )
+
+    if (success){}
 }
 
 const handelUpdateMember = () => {
