@@ -55,13 +55,31 @@
             <el-table-column label="備註" align="center" width="200" prop="remark"/>
             <el-table-column label="更新日期" align="center" width="200" prop="date_time_create"/>
         </el-table>
+        <!-- 分页 -->
+    <el-row>
+      <el-col :span="24">
+        <div class="pagination">
+          <el-pagination
+            v-model:currentPage="page_index"
+            v-model:page-size="page_size"
+            :page-sizes="page_sizes"
+            small="small"
+            :layout="layout"
+            :total="total"
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+          />
+        </div>
+      </el-col>
+    </el-row>
     </div>
+    
     <DialogModel 
         :show="show"
         :editData="editData"
         :operation = 'operation'
         @closeModel="closeModel"
-        @handleUpdateProfiles="handelUpdateMember"
+        @handleUpdateProfiles="handelUpdateMedicine"
         />
 </template>
 <script setup>
@@ -74,18 +92,26 @@ const tableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+// 分頁
+const page_index = ref(1),
+      page_size = ref(5),
+      page_total = ref(0),
+      page_sizes = [5, 10, 15, 20],
+      layout = "total, sizes, prev, pager, next, jumper"
 
-const getMember = async() => {
+const getMedicine = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-medicine.php')
 
     if (success){
         tableData.value = data
+        allTableData.value = DataTransfer
+        setPaginations()
     }else{
         history.go(0)
     }
 }
 
-watchEffect(() => getMember())
+watchEffect(() => getMedicine())
 
 const handleAdd = () => {
     show.value = true
@@ -100,33 +126,46 @@ const handleEdit = (row) => {
 }
 
 const handleDelete = async(row) => {
-    const { account } = row
-    const ajax_data = {
-        account: account
-    }
+    // const { account } = row
+    // const ajax_data = {
+    //     account: account
+    // }
 
-    const { data: { success, msg } } = await axios.post(
-        `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
-        ajax_data
-    )
-    console.log(success);
+    // const { data: { success, msg } } = await axios.post(
+    //     `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
+    //     ajax_data
+    // )
+    // console.log(success);
 
-    if (success){
-        Swal.fire({
-            title: `刪除會員成功`,
-            icon: 'success',
-            showConfirmButton: false,
-            showCancelButton: false,
-            timer: 2000,
-        }).then(() => {
-            handelUpdateMember()
-        })
-    }
+    // if (success){
+    //     Swal.fire({
+    //         title: `刪除藥品資料成功`,
+    //         icon: 'success',
+    //         showConfirmButton: false,
+    //         showCancelButton: false,
+    //         timer: 2000,
+    //     }).then(() => {
+    //         handelUpdateMedicine()
+    //     })
+    // }
 }
 
-const handelUpdateMember = () => {
-    getMember()
+const handelUpdateMedicine = () => {
+    getMedicine()
 }
+
+const handleSizeChange = () => {};
+const handleCurrentChange = () => {};
+
+const setPaginations = () => {
+    total.value = allTableData.value.length;
+    page_index.value = 1;
+    page_size.value = 5;
+    // 具体显示几页 6 5 2页 第一页5 第二页1
+    tableData.value = allTableData.value.filter((item, index) => {
+    return index < page_size.value;
+    });
+};
 
 const closeModel = () => {
     show.value = false
