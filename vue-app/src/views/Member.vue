@@ -49,20 +49,20 @@
         </el-table>
         <!-- 分页 -->
         <el-row>
-        <el-col :span="24">
-            <div class="pagination">
-            <el-pagination
-                v-model:currentPage="page_index"
-                v-model:page-size="page_size"
-                :page-sizes="page_sizes"
-                small="small"
-                :layout="layout"
-                :total="page_total"
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-            />
-            </div>
-        </el-col>
+            <el-col :span="24">
+                <div class="pagination">
+                <el-pagination
+                    v-model:currentPage="page_index"
+                    v-model:page-size="page_size"
+                    :page-sizes="page_sizes"
+                    small="small"
+                    :layout="layout"
+                    :total="page_total"
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                />
+                </div>
+            </el-col>
         </el-row>
     </div>
     <DialogModel 
@@ -95,6 +95,8 @@ const getMember = async() => {
 
     if (success){
         tableData.value = data
+        allTableData.value = DataTransfer
+        setPaginations()
     }else{
         history.go(0)
     }
