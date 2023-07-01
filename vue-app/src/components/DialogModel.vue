@@ -12,8 +12,8 @@
             <el-form-item prop="account" label="帳號">
                 <el-input v-model="dialogData.account" :readonly="!props.operation"></el-input>
             </el-form-item>
-            <el-form-item prop="account" label="聯絡人">
-                <el-input v-model="dialogData.name"></el-input>
+            <el-form-item prop="user_name" label="聯絡人">
+                <el-input v-model="dialogData.user_name"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
                 <el-input v-model="dialogData.password" type="password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
@@ -28,13 +28,13 @@
                 <el-input v-model="dialogData.mail"></el-input>
             </el-form-item>
             <!-- 地址先不開放變更 -->
-            <el-form-item prop="MIName" label="藥局名稱">
+            <el-form-item prop="medical_institution_name" label="藥局名稱">
                 <el-input v-model="dialogData.medical_institution_name"></el-input>
             </el-form-item>
-            <el-form-item prop="MICode" label="醫療機構代號">
+            <el-form-item prop="medical_institution_code" label="醫療機構代號">
                 <el-input v-model="dialogData.medical_institution_code"></el-input>
             </el-form-item>
-            <el-form-item prop="MICate" label="醫療機構種類">
+            <el-form-item prop="medical_institution_cate" label="醫療機構種類">
                 <el-select v-model="dialogData.medical_institution_cate" placeholder="醫療機構種類">
                     <el-option
                         v-for="(formType, index) in miCate"
