@@ -65,7 +65,7 @@
             :page-sizes="page_sizes"
             small="small"
             :layout="layout"
-            :total="total"
+            :total="page_total"
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
           />
