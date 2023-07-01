@@ -110,8 +110,9 @@ const handleDelete = async(row) => {
             showConfirmButton: false,
             showCancelButton: false,
             timer: 2000,
+        }).then(() => {
+            handelUpdateMember()
         })
-        handelUpdateMember()
     }
 }
 
