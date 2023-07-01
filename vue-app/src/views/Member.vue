@@ -11,7 +11,7 @@
         </div>
         <el-table
         :data="tableData"
-        max-height="450"
+        max-height="75vh"
         style="width: 100%"
         border
         v-if="tableData.length > 0"
@@ -50,17 +50,17 @@
         <!-- 分页 -->
         <el-row>
             <el-col :span="24">
-                <div class="pagination">
-                <el-pagination
-                    v-model:currentPage="page_index"
-                    v-model:page-size="page_size"
-                    :page-sizes="page_sizes"
-                    small="small"
-                    :layout="layout"
-                    :total="page_total"
-                    @size-change="handleSizeChange"
-                    @current-change="handleCurrentChange"
-                />
+                <div class="float-right mt-3">
+                    <el-pagination
+                        v-model:currentPage="page_index"
+                        v-model:page-size="page_size"
+                        :page-sizes="page_sizes"
+                        small="small"
+                        :layout="layout"
+                        :total="page_total"
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                    />
                 </div>
             </el-col>
         </el-row>
