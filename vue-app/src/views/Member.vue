@@ -100,6 +100,7 @@ const handleDelete = async(row) => {
         `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
         ajax_data
     )
+    console.log(success);
 
     if (success){
         Swal.fire({
