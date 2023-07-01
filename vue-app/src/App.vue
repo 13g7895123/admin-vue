@@ -30,7 +30,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <el-config-provider :locale="zh-tw">
+  <el-config-provider :locale="zhTw">
     <router-view></router-view>
   </el-config-provider>>  
 </template>
