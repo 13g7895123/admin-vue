@@ -95,7 +95,7 @@ const handleDelete = async(row) => {
 
     const { data: { success, msg } } = await axios.post(
         `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
-        account
+        'account'={ account }
     )
 
     if (success){}
