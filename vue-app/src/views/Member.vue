@@ -47,6 +47,23 @@
             <el-table-column label="藥局名稱" align="center" width="200" prop="medical_institution_name"/>
             <el-table-column label="種類" align="center" width="200" prop="medical_institution_cate"/>
         </el-table>
+        <!-- 分页 -->
+        <el-row>
+        <el-col :span="24">
+            <div class="pagination">
+            <el-pagination
+                v-model:currentPage="page_index"
+                v-model:page-size="page_size"
+                :page-sizes="page_sizes"
+                small="small"
+                :layout="layout"
+                :total="page_total"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+            />
+            </div>
+        </el-col>
+        </el-row>
     </div>
     <DialogModel 
         :show="show"
@@ -66,6 +83,12 @@ const tableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+// 分頁
+const page_index = ref(1),
+      page_size = ref(5),
+      page_total = ref(0),
+      page_sizes = [5, 10, 15, 20],
+      layout = "total, sizes, prev, pager, next, jumper"
 
 const getMember = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-member.php')
@@ -119,6 +142,36 @@ const handleDelete = async(row) => {
 const handelUpdateMember = () => {
     getMember()
 }
+
+const handleSizeChange = (pages) => {
+    page_index.value = 1;
+    page_size.value = pages;
+
+    // 重构数据
+    tableData.value = allTableData.value.filter((item, index) => {
+        return index < page_size.value;
+    });
+};
+
+const handleCurrentChange = (page) => {
+    let currentPage = page_size.value * (page - 1);
+    let pageData = allTableData.value.filter((item, index) => {
+        return index >= currentPage;
+    });
+    tableData.value = pageData.filter((item, index) => {
+        return index < page_size.value;
+    });
+};
+
+const setPaginations = () => {
+    total.value = allTableData.value.length;
+    page_index.value = 1;
+    page_size.value = 5;
+    // 具体显示几页 6 5 2页 第一页5 第二页1
+    tableData.value = allTableData.value.filter((item, index) => {
+    return index < page_size.value;
+    });
+};
 
 const closeModel = () => {
     show.value = false
