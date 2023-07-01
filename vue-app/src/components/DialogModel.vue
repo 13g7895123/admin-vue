@@ -62,17 +62,17 @@ const apiUrl = ref()
 
 const dialogData = ref({
     account: '',
-    name: '',               // 聯絡人
-    password: '',           // 密碼
-    passwordCheck: '',      // 密碼確認
-    phone: '',              // 電話
-    mail: '',               // 郵件
+    user_name: '',              // 聯絡人
+    password: '',               // 密碼
+    passwordCheck: '',          // 密碼確認
+    phone: '',                  // 電話
+    mail: '',                   // 郵件
     address1: '',
     address2: '',
     address3: '',
-    MIName: '',
-    MICode: '',
-    MICate: ''
+    medical_institution_code: '',
+    medical_institution_code: '',
+    medical_institution_cate: ''
 })
 
 watch(
