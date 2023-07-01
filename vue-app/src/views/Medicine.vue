@@ -127,28 +127,28 @@ const handleEdit = (row) => {
 }
 
 const handleDelete = async(row) => {
-    // const { account } = row
-    // const ajax_data = {
-    //     account: account
-    // }
+    const { medicine_code } = row
+    const ajax_data = {
+        medicine_code: medicine_code
+    }
 
-    // const { data: { success, msg } } = await axios.post(
-    //     `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
-    //     ajax_data
-    // )
-    // console.log(success);
+    const { data: { success, msg } } = await axios.post(
+        `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
+        ajax_data
+    )
+    console.log(success);
 
-    // if (success){
-    //     Swal.fire({
-    //         title: `刪除藥品資料成功`,
-    //         icon: 'success',
-    //         showConfirmButton: false,
-    //         showCancelButton: false,
-    //         timer: 2000,
-    //     }).then(() => {
-    //         handelUpdateMedicine()
-    //     })
-    // }
+    if (success){
+        Swal.fire({
+            title: `刪除藥品資料成功`,
+            icon: 'success',
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+        }).then(() => {
+            handelUpdateMedicine()
+        })
+    }
 }
 
 const handelUpdateMedicine = () => {
