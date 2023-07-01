@@ -34,16 +34,6 @@
             <el-form-item prop="medical_institution_code" label="醫療機構代號">
                 <el-input v-model="dialogData.medical_institution_code"></el-input>
             </el-form-item>
-            <el-form-item prop="medical_institution_cate" label="醫療機構種類">
-                <el-select v-model="dialogData.medical_institution_cate" placeholder="醫療機構種類">
-                    <el-option
-                        v-for="(formType, index) in miCate"
-                        :key="index"
-                        :label="formType"
-                        :value="formType"
-                    ></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item class="text-right">
                 <el-button @click="handleClose">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
@@ -57,22 +47,24 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 const dialogRef = ref()
-const miCate = ref(['自開藥局', '受聘醫師'])
 const apiUrl = ref()
 
-const dialogData = ref({
-    account: '',
-    user_name: '',              // 聯絡人
-    password: '',               // 密碼
-    passwordCheck: '',          // 密碼確認
-    phone: '',                  // 電話
-    mail: '',                   // 郵件
-    address1: '',
-    address2: '',
-    address3: '',
-    medical_institution_code: '',
-    medical_institution_code: '',
-    medical_institution_cate: ''
+const dialogData = ref({    
+    medicine_code : '',
+    eng_name : '',
+    medicine_name : '',
+    ingredient : '',
+    ingredient_num : '',
+    specification_quantity : '',
+    single_compound : '',
+    price : '',
+    start_and_end : '',
+    medicine_manufacturer : '',
+    dosage : '',
+    classification : '',
+    classification_group : '',
+    ATC_code : '',
+    remark : '',
 })
 
 watch(

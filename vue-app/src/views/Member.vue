@@ -65,7 +65,7 @@
             </el-col>
         </el-row>
     </div>
-    <DialogModel 
+    <DialogMember 
         :show="show"
         :editData="editData"
         :operation = 'operation'
