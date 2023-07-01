@@ -29,7 +29,7 @@ watchEffect(() => {
 
 </script>
 
-<template>
+<template class=" overflow-y-hidden">
   <el-config-provider :locale="zhTw">
     <router-view></router-view>
   </el-config-provider>>  
