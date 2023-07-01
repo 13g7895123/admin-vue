@@ -84,12 +84,14 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
+    console.log('edit click');
     show.value = true
     editData.value = row
     operation.value = false
 }
 
 const handleDelete = (row) => {
+    console.log('delete click');
     console.log(row);
 }
 
