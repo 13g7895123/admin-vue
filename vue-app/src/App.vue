@@ -3,6 +3,8 @@ import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
 import { useRouter } from 'vue-router';
 import Swal from 'sweetalert2'
+import { ElConfigProvider } from 'element-plus'
+import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 
 const loginStore = useAuthStore()
 const router = useRouter()
@@ -28,7 +30,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <router-view></router-view>
+  <el-config-provider :locale="zh-tw">
+    <router-view></router-view>
+  </el-config-provider>>  
 </template>
 
 <style scoped>
