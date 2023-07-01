@@ -92,10 +92,13 @@ const handleEdit = (row) => {
 
 const handleDelete = async(row) => {
     const { account } = row
+    const ajax_data = {
+        account: account
+    }
 
     const { data: { success, msg } } = await axios.post(
         `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
-        'account'={ account }
+        ajax_data
     )
 
     if (success){}
