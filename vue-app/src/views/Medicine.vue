@@ -37,7 +37,7 @@
                     </el-button>
                 </template>
             </el-table-column>
-            <el-table-column label="編號" align="center" width="100"/>
+            <el-table-column type="index" label="編號" align="center" width="100"/>
             <el-table-column label="藥品編號" align="center" width="200" prop="medicine_code"/>
             <el-table-column label="英文名" align="center" width="200" prop="eng_name"/>
             <el-table-column label="中文名" align="center" width="200" prop="medicine_name"/>
