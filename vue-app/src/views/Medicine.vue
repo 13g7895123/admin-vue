@@ -58,7 +58,7 @@
         <!-- 分页 -->
         <el-row>
             <el-col :span="24">
-                <div class="float-right">
+                <div class="float-right mt-3">
                     <el-pagination
                         v-model:currentPage="page_index"
                         v-model:page-size="page_size"
