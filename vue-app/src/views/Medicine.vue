@@ -37,7 +37,7 @@
                     </el-button>
                 </template>
             </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="100"/>
+            <el-table-column label="編號" align="center" width="100"/>
             <el-table-column label="藥品編號" align="center" width="200" prop="medicine_code"/>
             <el-table-column label="英文名" align="center" width="200" prop="eng_name"/>
             <el-table-column label="中文名" align="center" width="200" prop="medicine_name"/>
@@ -57,20 +57,20 @@
         </el-table>
         <!-- 分页 -->
         <el-row>
-        <el-col :span="24">
-            <div class="pagination">
-            <el-pagination
-                v-model:currentPage="page_index"
-                v-model:page-size="page_size"
-                :page-sizes="page_sizes"
-                small="small"
-                :layout="layout"
-                :total="page_total"
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-            />
-            </div>
-        </el-col>
+            <el-col :span="24">
+                <div class="float-right">
+                    <el-pagination
+                        v-model:currentPage="page_index"
+                        v-model:page-size="page_size"
+                        :page-sizes="page_sizes"
+                        small="small"
+                        :layout="layout"
+                        :total="page_total"
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                    />
+                </div>
+            </el-col>
         </el-row>
     </div>
     
