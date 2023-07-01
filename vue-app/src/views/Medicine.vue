@@ -178,7 +178,7 @@ const handleCurrentChange = (page) => {
 const setPaginations = () => {
     page_total.value = allTableData.value.length;
     page_index.value = 1;
-    page_size.value = 5;
+    page_size.value = 10;
     // 具体显示几页 6 5 2页 第一页5 第二页1
     tableData.value = allTableData.value.filter((item, index) => {
     return index < page_size.value;
