@@ -171,6 +171,7 @@ const setPaginations = () => {
     page_index.value = 1;
     page_size.value = 5;
     // 具体显示几页 6 5 2页 第一页5 第二页1
+    console.log(allTableData.value);
     tableData.value = allTableData.value.filter((item, index) => {
     return index < page_size.value;
     });
