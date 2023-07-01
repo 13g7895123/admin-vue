@@ -91,7 +91,8 @@ const handleEdit = (row) => {
 }
 
 const handleDelete = (row) => {
-    console.log('delete click');
+    const { id, account} = row
+    console.log('delete click' + id);
     console.log(row);
 }
 
