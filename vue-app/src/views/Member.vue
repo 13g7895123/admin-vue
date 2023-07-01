@@ -111,7 +111,6 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    console.log('edit click');
     show.value = true
     editData.value = row
     operation.value = false
@@ -127,7 +126,6 @@ const handleDelete = async(row) => {
         `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
         ajax_data
     )
-    // console.log(success);
 
     if (success){
         Swal.fire({
@@ -171,7 +169,6 @@ const setPaginations = () => {
     page_index.value = 1;
     page_size.value = 5;
     // 具体显示几页 6 5 2页 第一页5 第二页1
-    console.log(allTableData.value);
     tableData.value = allTableData.value.filter((item, index) => {
         return index < page_size.value;
     });
