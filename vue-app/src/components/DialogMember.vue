@@ -57,7 +57,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 const dialogRef = ref()
-const miCate = ref(['自開藥局', '受聘醫師'])
+const miCate = ref(['自開藥局', '受聘醫師(藥劑生)'])
 const apiUrl = ref()
 
 const dialogData = ref({
