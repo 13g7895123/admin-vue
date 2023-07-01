@@ -10,7 +10,7 @@
             style="margin: 10px; width: auto"
             >
             <el-form-item prop="medicine_code" label="藥品編號">
-                <el-input v-model="dialogData.medicine_code"></el-input>
+                <el-input v-model="dialogData.medicine_code" :readonly="!props.operation"></el-input>
             </el-form-item>
             <el-form-item prop="eng_name" label="英文名">
                 <el-input v-model="dialogData.eng_name"></el-input>
