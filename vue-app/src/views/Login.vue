@@ -75,7 +75,8 @@ const handleSubmit = (formEl) => {
                 localStorage.setItem('userName', name)
 
                 loginStore.setAuth(true)
-                loginStore.setUser(account, name)
+                loginStore.setUser(account)
+                loginStore.setUserName(name)
 
                 Swal.fire({
                     title: '登入成功',
