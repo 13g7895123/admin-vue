@@ -27,7 +27,6 @@
             <el-form-item prop="specification_quantity" label="特殊用量">
                 <el-input v-model="dialogData.specification_quantity"></el-input>
             </el-form-item>
-            <!-- 地址先不開放變更 -->
             <el-form-item prop="single_compound" label="單複方">
                 <el-input v-model="dialogData.single_compound"></el-input>
             </el-form-item>
