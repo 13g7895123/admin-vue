@@ -56,22 +56,22 @@
             <el-table-column label="更新日期" align="center" width="200" prop="date_time_create"/>
         </el-table>
         <!-- 分页 -->
-    <el-row>
-      <el-col :span="24">
-        <div class="pagination">
-          <el-pagination
-            v-model:currentPage="page_index"
-            v-model:page-size="page_size"
-            :page-sizes="page_sizes"
-            small="small"
-            :layout="layout"
-            :total="page_total"
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-          />
-        </div>
-      </el-col>
-    </el-row>
+        <el-row>
+        <el-col :span="24">
+            <div class="pagination">
+            <el-pagination
+                v-model:currentPage="page_index"
+                v-model:page-size="page_size"
+                :page-sizes="page_sizes"
+                small="small"
+                :layout="layout"
+                :total="page_total"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+            />
+            </div>
+        </el-col>
+        </el-row>
     </div>
     
     <DialogModel 
@@ -89,6 +89,7 @@ import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 
 const tableData = ref([])
+const allTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增

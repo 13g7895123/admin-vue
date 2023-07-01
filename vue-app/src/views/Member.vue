@@ -80,6 +80,7 @@ import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 
 const tableData = ref([])
+const allTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
@@ -126,7 +127,7 @@ const handleDelete = async(row) => {
         `http://139.162.15.125:9090/api/health-insurance/admin-member-delete.php`,
         ajax_data
     )
-    console.log(success);
+    // console.log(success);
 
     if (success){
         Swal.fire({
