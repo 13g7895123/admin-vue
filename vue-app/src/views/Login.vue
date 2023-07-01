@@ -88,7 +88,7 @@ const handleSubmit = (formEl) => {
             }else{
                 Swal.fire({
                     title: '登入失敗',
-                    test: msg,
+                    text: msg,
                     icon: 'error',
                     showConfirmButton: false,
                     showCancelButton: false,
