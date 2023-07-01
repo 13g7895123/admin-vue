@@ -11,7 +11,7 @@
         </div>
         <el-table
         :data="tableData"
-        max-height="80vh"
+        max-height="75vh"
         style="width: 100%"
         border
         v-if="tableData.length > 0"
