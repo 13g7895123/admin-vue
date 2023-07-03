@@ -21,9 +21,9 @@
             <el-form-item prop="ingredient" label="成分">
                 <el-input v-model="dialogData.ingredient"></el-input>
             </el-form-item>
-            <el-form-item prop="ingredient_num" label="數量">
+            <!-- <el-form-item prop="ingredient_num" label="數量">
                 <el-input v-model="dialogData.ingredient_num"></el-input>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item prop="specification_quantity" label="特殊用量">
                 <el-input v-model="dialogData.specification_quantity"></el-input>
             </el-form-item>
@@ -74,7 +74,7 @@ const dialogData = ref({
     eng_name : '',
     medicine_name : '',
     ingredient : '',
-    ingredient_num : '',
+    // ingredient_num : '',
     specification_quantity : '',
     single_compound : '',
     price : '',
