@@ -42,7 +42,7 @@
             <el-table-column label="英文名" align="center" width="200" prop="eng_name"/>
             <el-table-column label="中文名" align="center" width="200" prop="medicine_name"/>
             <el-table-column label="成分" align="center" width="200" prop="ingredient"/>
-            <el-table-column label="數量" align="center" width="200" prop="ingredient_num"/>
+            <!-- <el-table-column label="數量" align="center" width="200" prop="ingredient_num"/> -->
             <el-table-column label="特殊用量" align="center" width="200" prop="specification_quantity"/>
             <el-table-column label="單複方" align="center" width="200" prop="single_compound"/>
             <el-table-column label="價格" align="center" width="200" prop="price"/>
