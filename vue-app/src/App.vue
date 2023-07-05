@@ -13,6 +13,7 @@ watchEffect(() => {
   if(localStorage.userAccount){
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
+    loginStore.setUserName(localStorage.userName)
   }else{
     Swal.fire({
       title: '驗證失敗',
