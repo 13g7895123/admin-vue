@@ -9,6 +9,9 @@
                     <el-button type="primary" size="small" @click="handleSort"
                         >篩選</el-button
                     >
+                    <el-button type="primary" size="small" @click="handleCancelSort"
+                        >取消篩選</el-button
+                    >
                 </el-form-item>
             </el-form>
             <el-form :inline="true">
@@ -225,6 +228,13 @@ const handleSort = () => {
         return eng_name.includes(filterEngName.value)
     })
     setPaginations();
+}
+
+const handleCancelSort = () => {
+    allTableData.value = filterTableData.value.filter((item) => {
+        let eng_name = item.eng_name
+        return eng_name != ''
+    })
 }
 
 </script>
