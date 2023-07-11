@@ -225,7 +225,8 @@ const handleSort = () => {
 
     allTableData.value = filterTableData.value.filter((item) => {
         let eng_name = item.eng_name
-        return eng_name.includes(filterEngName.value)
+        eng_name = eng_name.toUpperCase()
+        return eng_name.includes(filterEngName.value.toUpperCase())
     })
     setPaginations();
 }
