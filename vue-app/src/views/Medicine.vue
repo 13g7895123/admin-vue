@@ -222,7 +222,7 @@ const handleSort = () => {
 
     allTableData.value = filterTableData.value.filter((item) => {
         let eng_name = item.eng_name
-        return filterEngName.value == eng_name
+        return eng_name.includes(filterEngName.value)
     })
     setPaginations();
 }
