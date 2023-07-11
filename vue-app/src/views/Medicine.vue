@@ -2,10 +2,14 @@
     <div class="h-full px-5 py-3">
         <div class="w-full flex items-center">
             <el-form :inline="true">
-                <el-form-item prop="colName" label="欄位名稱">
-                    <el-input v-model="dialogData.colName"></el-input>
+                <el-form-item prop="colName" label="藥品名稱">
+                    <el-input v-model="filterEngName"></el-input>
                 </el-form-item>
-                
+                <el-form-item>
+                    <el-button type="primary" size="small" @click="handleSort"
+                        >篩選</el-button
+                    >
+                </el-form-item>
             </el-form>
             <el-form :inline="true">
                 <el-form-item class="float-right">
@@ -96,6 +100,7 @@ import Swal from 'sweetalert2'
 
 const tableData = ref([])
 const allTableData = ref([])
+const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
@@ -105,6 +110,8 @@ const page_index = ref(1),
       page_total = ref(0),
       page_sizes = [5, 10, 15, 20],
       layout = "total, sizes, prev, pager, next, jumper"
+// 篩選
+const filterEngName = ref()
 
 const getMedicine = async() => {
     const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-medicine.php')
@@ -112,6 +119,7 @@ const getMedicine = async() => {
     if (success){
         tableData.value = data
         allTableData.value = data
+        filterTableData.value = data
         setPaginations()
     }else{
         history.go(0)
@@ -126,7 +134,7 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    console.log('edit click');
+    // console.log('edit click');
     show.value = true
     editData.value = row
     operation.value = false
@@ -142,7 +150,7 @@ const handleDelete = async(row) => {
         `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
         ajax_data
     )
-    console.log(success);
+    // console.log(success);
 
     if (success){
         Swal.fire({
@@ -194,6 +202,28 @@ const setPaginations = () => {
 const closeModel = () => {
     show.value = false
     editData.value = {}
+}
+
+// 篩選
+const handleSort = () => {
+    if (filterColName == ''){
+
+        Swal.fire({
+            title: `請輸入藥品名`,
+            icon: 'error',
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+        }).then(() => {
+            getMedicine()
+            return
+        })
+    }
+
+    allTableData.value = filterTableData.value.filter((item) => {
+        let eng_name = item.eng_name
+        return filterEngName == eng_name
+    })
 }
 
 </script>
