@@ -1,22 +1,11 @@
 <template>
     <div class="h-full px-5 py-3">
-        <div class="flex items-center">
+        <div class="w-full flex items-center">
             <el-form :inline="true">
-                <el-form-item label="时间筛选">
-                <el-date-picker
-                    v-model="startTime"
-                    type="datetime"
-                    placeholder="选择开始时间"
-                >
-                </el-date-picker>
-                --
-                <el-date-picker
-                    v-model="endTime"
-                    type="datetime"
-                    placeholder="选择结束时间"
-                >
-                </el-date-picker>
+                <el-form-item prop="colName" label="欄位名稱">
+                    <el-input v-model="dialogData.colName"></el-input>
                 </el-form-item>
+                
                 <el-form-item>
                 <el-button type="primary" size="small" @click="handleSort"
                     >筛选</el-button
