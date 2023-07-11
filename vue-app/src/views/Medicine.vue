@@ -2,6 +2,33 @@
     <div class="h-full px-5 py-3">
         <div>
             <el-form :inline="true">
+                <el-form-item label="时间筛选">
+                <el-date-picker
+                    v-model="startTime"
+                    type="datetime"
+                    placeholder="选择开始时间"
+                >
+                </el-date-picker>
+                --
+                <el-date-picker
+                    v-model="endTime"
+                    type="datetime"
+                    placeholder="选择结束时间"
+                >
+                </el-date-picker>
+                </el-form-item>
+                <el-form-item>
+                <el-button type="primary" size="small" @click="handleSort"
+                    >筛选</el-button
+                >
+                </el-form-item>
+                <el-form-item class="btn-right">
+                <el-button type="primary" size="small" @click="handleAdd"
+                    >添加</el-button
+                >
+                </el-form-item>
+            </el-form>
+            <el-form :inline="true">
                 <el-form-item class="float-right">
                     <el-button type="primary" size="small" @click="handleAdd"
                         >新增</el-button
