@@ -6,16 +6,6 @@
                     <el-input v-model="dialogData.colName"></el-input>
                 </el-form-item>
                 
-                <el-form-item>
-                <el-button type="primary" size="small" @click="handleSort"
-                    >筛选</el-button
-                >
-                </el-form-item>
-                <el-form-item class="btn-right">
-                <el-button type="primary" size="small" @click="handleAdd"
-                    >添加</el-button
-                >
-                </el-form-item>
             </el-form>
             <el-form :inline="true">
                 <el-form-item class="float-right">
