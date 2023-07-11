@@ -231,10 +231,7 @@ const handleSort = () => {
 }
 
 const handleCancelSort = () => {
-    allTableData.value = filterTableData.value.filter((item) => {
-        let eng_name = item.eng_name
-        return eng_name != ''
-    })
+    history.go(0)
 }
 
 </script>
