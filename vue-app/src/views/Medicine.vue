@@ -206,7 +206,7 @@ const closeModel = () => {
 
 // 篩選
 const handleSort = () => {
-    if (filterColName == ''){
+    if (filterEngName.value == ''){
 
         Swal.fire({
             title: `請輸入藥品名`,
@@ -222,8 +222,9 @@ const handleSort = () => {
 
     allTableData.value = filterTableData.value.filter((item) => {
         let eng_name = item.eng_name
-        return filterEngName == eng_name
+        return filterEngName.value == eng_name
     })
+    setPaginations();
 }
 
 </script>
