@@ -1,6 +1,6 @@
 <template>
     <div class="h-full px-5 py-3">
-        <div class="flex">
+        <div class="flex items-center">
             <el-form :inline="true">
                 <el-form-item label="时间筛选">
                 <el-date-picker
